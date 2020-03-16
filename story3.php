@@ -2,9 +2,9 @@
 
 function isPrime($number)
 {
-//boucle de 2 au nombre à tester
+    //boucle de 2 au nombre à tester
     for ($i = 2; $i < $number; $i++) {
-        //test du qutotien de la division
+        //test du quotien de la division
         if ($number % $i == 0) {
             return FALSE;
         }

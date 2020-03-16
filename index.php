@@ -31,7 +31,8 @@
     <h2> Stories Done : </h2>
     <p> Toutes sauf 1 - 2 - 3</p>
 </div>
-<?php include 'exercice.php' ?>
+<?php include 'story3.php' ?>
+<?php include 'story4.php' ?>
 <?php  include 'footer.php' ?>
 </body>
 </html>

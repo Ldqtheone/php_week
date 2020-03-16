@@ -1,1 +1,0 @@
-header('index.php');
