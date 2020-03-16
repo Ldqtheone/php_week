@@ -1,6 +1,4 @@
 <?php
-if(isset($_POST['prems']))
-    $number = $_POST['prems'];
 
 function isPrime($number)
 {
@@ -11,22 +9,19 @@ function isPrime($number)
             return FALSE;
         }
     }
-//Aucun diviseur trouvé, c'est un nombre permier
-    return TRUE;
+    return true;
 }
 
-if(isset($number)) {
-    $message = "";
-    if (isPrime($number)) {
-        for ($i = 3; $i < $number; $i++) {
-            if (isPrime($i)) {
-                $message = "Les nombres premiers de 0 à " . $number . " sont : " . $i . ' ';
-            }
-        }
+function printPrime($number){
+
+    //Aucun diviseur trouvé, c'est un nombre permier
+    echo "Les nombres premiers de 0 à " . $number . " sont : ";
+    for ($i = 3; $i < $number; $i++) {
+        if(isPrime($i))
+            echo $i . ' ';
     }
-    else
-        $message = " Ren pour le moment ";
 }
+
 ?>
 
 <div class="premiumNumber">
@@ -37,7 +32,7 @@ if(isset($number)) {
     </form>
     <p>
         <?php
-            if(isset($message))
-                echo $message;
+        if (isset($_POST['prems']))
+            printPrime($_POST['prems']);
         ?></p>
 </div>
