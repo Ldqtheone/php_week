@@ -1,7 +1,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> Exercice 1</title>
 </head>
 <body>
@@ -15,11 +16,11 @@
 </div>
 <div class="nbDone">
     <H2> Number Done : </H2>
-    <p>6</p>
+    <p>12</p>
 </div>
 <div class="nbUndone">
     <h2>Number Undone :</h2>
-    <p>10</p>
+    <p>4</p>
 </div>
 <div class="storyDone">
     <H2> Stories Done : </H2>
@@ -29,11 +30,13 @@
     <p> Story 4 </p>
     <p> Story 5 </p>
     <p> Story 6 </p>
+    <p> Story 7 </p>
+    <p> Story 8 </p>
+    <p> Story 9 </p>
+    <p> Story 10 </p>
+    <p> Story 11 </p>
+    <p> Story 12 </p>
 </div>
-<div class="storyToDO">
-    <h2> Stories Done : </h2>
-    <p> Toutes sauf 1 - 2 - 3 - 4 - 5 - 6</p>
-</div>
-<?php include 'footer.php' ?>
+<?php  include 'footer.php' ?>
 </body>
 </html>
