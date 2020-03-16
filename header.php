@@ -1,7 +1,8 @@
 <header>
     <nav>
-        <a href="#"> Lien 1 </a>
-        <a href="#"> Lien 2 </a>
-        <a href="#"> Lien 3 </a>
+        <a href="index.php">Acceuil</a>
+        <a href="algo/algo.php"> Algorithmie </a>
+        <a href="bdd/bdd.php"> BDD </a>
+        <a href="poste/poste.php"> La poste </a>
     </nav>
 </header>

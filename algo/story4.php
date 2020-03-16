@@ -1,16 +1,5 @@
 <?php
-
-function dateToCheck($timestamp)
-{
-    $date = new DateTime();
-    $currentDate = $date->getTimeStamp();
-    $checked = $currentDate - $timestamp;
-
-    echo 'L\'évènement à eu lieu le : ' . date('d/m/Y', $checked);
-
-}
-
-?>
+include 'TimestampClass.php' ?>
 
 <div class="timestampDate">
     <h2> Evenements passés : </h2>
@@ -20,7 +9,10 @@ function dateToCheck($timestamp)
     </form>
     <p>
         <?php
+
+        $dateToCheck = new TimestampClass();
+
         if (isset($_POST['time']))
-            dateToCheck($_POST['time']);
+            $dateToCheck->dateToCheck($_POST['time']);
         ?></p>
 </div>

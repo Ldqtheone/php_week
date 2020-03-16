@@ -15,24 +15,25 @@
 </div>
 <div class="nbDone">
     <H2> Number Done : </H2>
-    <p>3</p>
+    <p>6</p>
 </div>
 <div class="nbUndone">
     <h2>Number Undone :</h2>
-    <p>13</p>
+    <p>10</p>
 </div>
 <div class="storyDone">
     <H2> Stories Done : </H2>
     <p> Story 1 </p>
     <p> Story 2 </p>
     <p> Story 3 </p>
+    <p> Story 4 </p>
+    <p> Story 5 </p>
+    <p> Story 6 </p>
 </div>
 <div class="storyToDO">
     <h2> Stories Done : </h2>
-    <p> Toutes sauf 1 - 2 - 3</p>
+    <p> Toutes sauf 1 - 2 - 3 - 4 - 5 - 6</p>
 </div>
-<?php include 'story3.php' ?>
-<?php include 'story4.php' ?>
-<?php  include 'footer.php' ?>
+<?php include 'footer.php' ?>
 </body>
 </html>
