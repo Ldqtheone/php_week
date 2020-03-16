@@ -1,8 +1,11 @@
 <header>
     <nav>
-        <a href="index.php">Acceuil</a>
-        <a href="algo/algo.php"> Algorithmie </a>
-        <a href="bdd/bdd.php"> BDD </a>
-        <a href="poste/poste.php"> La poste </a>
+        <ul>
+            <li><a href="/php_week/index.php">Acceuil</a></li>
+            <li><a href="/php_week/algo/algo.php">Algorithmie</a></li>
+            <li><a href="/php_week/bdd/bdd.php">BDD</a></li>
+            <li><a href="/php_week/poste/poste.php">La poste</a></li>
+            <li><a href="/php_week/TP_Dino/dino.php">Combat Dino</a></li>
+        </ul>
     </nav>
 </header>
