@@ -20,7 +20,8 @@ class Triceratops
     {
         $this->life   = 600;
         $this->damage = 40;
-        echo "Triceratops { life: ".$this->life.", damage: ".$this->damage." } created. ------ ".PHP_EOL;
+        echo "Triceratops { life: ".$this->life.", damage: ".$this->damage." } created.";
+        echo "<br/>";
     }
 
     /**
@@ -29,7 +30,8 @@ class Triceratops
      */
     public function getLife()
     {
-        echo "Triceratops life: ".$this->life." ------ ".PHP_EOL;
+        echo "Triceratops life: ".$this->life;
+        echo "<br/>";
         return $this->life;
     }
 
@@ -39,7 +41,8 @@ class Triceratops
      */
     public function attackMortel($target)
     {
-        echo "Triceratops mortal attack: ".$target->getLife()." damage ------ ".PHP_EOL;
+        echo "Triceratops mortal attack: ".$target->getLife()." damage";
+        echo "<br/>";
         $target->receiveDamage($target->getLife());
     }
 
@@ -49,7 +52,8 @@ class Triceratops
      */
     public function receiveDamage($damage)
     {
-        echo "Triceratops receive: ".$damage." damage ------ ".PHP_EOL;
+        echo "Triceratops receive: ".$damage." damage";
+        echo "<br/>";
         $this->life -= $damage;
     }
 }
