@@ -1,15 +1,16 @@
 <h2>Story 3</h2>
-<div class="premiumNumber">
-    <h3> Nombre premier : </h3>
-    <form id="formStory3" method="POST" action="">
-        <input type="number" name="number" placeholder="Entrez un nombre premier">
-        <input type="submit" name="submitStory3" value="Envoyer">
+<div>
+    <h3>Primary Number :</h3>
+    <form id="formStory3" method="POST" action="#">
+        <label for="primaryNumber">Enter a number :</label>
+        <input type="number" name="primaryNumber" placeholder="Number">
+        <input type="submit" name="submitStory3" value="Send">
     </form>
     <p>
         <?php
-        if (!empty($_POST) && $_POST["submitStory3"] === "Envoyer")
+        if (isset($_POST["submitStory3"]))
         {
-            $algorithmie->getPrimaryNumber($_POST['number']);
+            $algorithmie->getPrimaryNumber($_POST["primaryNumber"]);
         }
         ?>
     </p>

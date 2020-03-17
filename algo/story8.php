@@ -1,29 +1,17 @@
-<?php
-
-if (isset($_POST['nombre']))
-{
-
-    $number = $_POST['nombre'];
-
-    $nombre = convert($number, 16);
-
-    if ($number < 0)
-        $nombre= "-".$nombre;
-    }
-?>
-
 <h2>Story 8</h2>
-<div class="premiumNumber">
-    <h3> Nombre hexa : </h3>
-    <form method="POST" action="">
-        <input type="number" name="nombre" placeholder="Entrez un nombre ">
-        <input type="submit" name="Envoyer">
+<div>
+    <h3>Decimal to Hexadecimal :</h3>
+    <form id="formStory8" method="POST" action="#">
+        <label for="hexadecimalNumber">Enter a number : </label>
+        <input type="number" name="hexadecimalNumber" placeholder="Number">
+        <input type="submit" name="submitStory8" value="Send">
     </form>
     <p>
         <?php
-        if (isset($nombre)) {
-                echo $nombre;
-        }
-
-        ?></p>
+            if (isset($_POST["submitStory8"]))
+            {
+                $algorithmie->convertDecimalToHexadecimal($_POST['hexadecimalNumber']);
+            }
+        ?>
+    </p>
 </div>

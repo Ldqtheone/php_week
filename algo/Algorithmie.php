@@ -17,10 +17,37 @@ class Algorithmie
     public function getPrimaryNumber($number)
     {
         echo "Les nombres premiers de 0 à " . $number . " sont : ";
-        for ($i = 3; $i <= $number; $i++) {
-            if ($number % $i === 0)
-                echo $i . " ; ";
+        for ($i = 3; $i < $number; $i++) {
+            if($this->isPrime($i))
+                echo $i . ' ; ';
         }
+    }
+
+    /**
+     * Function associate with story 3
+     * @param $number
+     * @return bool
+     */
+    private function isPrime($number)
+    {
+        // boucle de 2 au nombre à tester
+        for ($i = 2; $i < $number; $i++) {
+            //test du quotien de la division
+            if ($number % $i == 0) {
+                return FALSE;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Function associate with story 4
+     * @param $timestamp
+     * @throws Exception
+     */
+    public function dateToCheck($timestamp)
+    {
+        echo 'L\'évènement à eu lieu le : ' . date('d/m/Y', (new DateTime())->getTimestamp() - $timestamp);
     }
 
 
@@ -33,7 +60,7 @@ class Algorithmie
      */
     public function getMin($numberOne, $numberTwo, $numberThree)
     {
-        $message = "";
+        $message = null;
         if ($numberOne < $numberTwo && $numberOne < $numberThree) {
             $message = "Le nombre le plus  petit est " . $numberOne . ' ';
         } elseif ($numberTwo < $numberOne && $numberTwo < $numberThree) {
@@ -43,7 +70,7 @@ class Algorithmie
         } else {
             $message = "il y a une égalité";
         }
-        return $message;
+        echo $message;
     }
 
     /**
@@ -84,7 +111,7 @@ class Algorithmie
      * Function associate with story 7
      * @param $nbr
      */
-    public function factoriel($nbr)
+    public function factorial($nbr)
     {
         $fact = 1;
         for ($i = 1; $i <= $nbr; $i++) {
@@ -126,9 +153,9 @@ class Algorithmie
                 break;
         }
         if ($decimal <= 1) {
-            return (string)$decimal;
+            echo (string)$decimal;
         } else {
-            return (string)$this->convertDecimalToHexadecimal(($decimal - $rem) / 16) . (string)$add;
+            echo (string)$this->convertDecimalToHexadecimal(($decimal - $rem) / 16) . (string)$add;
         }
     }
 
@@ -144,23 +171,18 @@ class Algorithmie
         $rem = $add;
 
         if ($decimal <= 1) {
-            return (string)$decimal;
+            echo (string)$decimal;
         } else {
-            return (string)$this->convertDecimalToBinary(($decimal - $rem) / 2) . (string)$add;
+            echo (string)$this->convertDecimalToBinary(($decimal - $rem) / 2) . (string)$add;
         }
     }
 
 
-    public function dateToCheck($timestamp)
-    {
-        echo 'L\'évènement à eu lieu le : ' . date('d/m/Y', (new DateTime())->getTimestamp() - $timestamp);
-        return true;
-    }
+
 
 
     public function checkValues($mail, $date)
     {
-
         if (strlen($mail) > 3) {
             if (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $mail))
                 echo 'L\'adresse n\'est pas valide';
