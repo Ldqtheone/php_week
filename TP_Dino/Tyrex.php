@@ -12,15 +12,23 @@ class Tyrex
      */
     private $life;
     private $damage;
+    private $gender;
+    private $story;
 
     /**
      * Tyrex constructor.
      */
-    public function __construct()
+    public function __construct($life, $damage, $gender, $story)
     {
-        $this->life   = 500;
-        $this->damage = 50;
-        echo "Tyrex { life: ".$this->life.", damage: ".$this->damage." } created.";
+        $this->life   = $life;
+        $this->damage = $damage;
+        $this->gender = $gender;
+        $this->story = $story;
+
+        echo "Tyrex { Vie: ".$this->life.", Dégats: ".$this->damage.", Sexe: ".$this->gender. "} créé.";
+        echo "<br/>";
+        echo "Son histoire : ". $story . "";
+
         echo "<br/>";
     }
 
@@ -34,7 +42,6 @@ class Tyrex
         echo "<br/>";
         return $this->life;
     }
-
 
     /**
      * Do a normal attack
@@ -60,7 +67,7 @@ class Tyrex
 
     /**
      * Receive damage
-     * @param $damage  the damage received
+     * @param $damage the damage received
      */
     public function receiveDamage($damage)
     {

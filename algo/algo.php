@@ -16,6 +16,7 @@
 <?php include 'US9.php'?>
 <?php include 'story10.php'?>
 <?php include 'story11.php'?>
+<?php include 'US12.php'?>
 <?php include '../footer.php' ?>
 </body>
 </html>

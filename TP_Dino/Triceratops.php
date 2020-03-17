@@ -12,15 +12,22 @@ class Triceratops
      */
     private $life;
     private $damage;
+    private $gender;
+    private $story;
 
     /**
      * Triceratops constructor.
      */
-    public function __construct()
+    public function __construct($life, $damage, $gender, $story)
     {
-        $this->life   = 600;
-        $this->damage = 40;
-        echo "Triceratops { life: ".$this->life.", damage: ".$this->damage." } created.";
+        $this->life   = $life;
+        $this->damage = $damage;
+        $this->gender = $gender;
+        $this->story = $story;
+
+        echo "Triceratops { Vie: ".$this->life.", Dégats: ".$this->damage.", Sexe: ".$this->gender. "} créé.";
+        echo "<br/>";
+        echo "Son histoire : ". $story . "";
         echo "<br/>";
     }
 
