@@ -1,7 +1,3 @@
-<?php
-    require 'Database.php';
-    $database = new Database("php_week");
-?>
 <form method="POST" id="formContact" action="">
     <h2 id="titleContact">Vos coordonnées :</h2>
 
@@ -41,7 +37,7 @@ if(isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && 
     $database->insertInto('contacts', $user_data);
 }
 
-$contacts = $database->selectAll('contacts');
+/* $contacts = $database->selectAll('contacts');
 
 //var_dump($contacts);
 
@@ -49,4 +45,4 @@ foreach ($contacts as $contact){
     echo $contact['firstname'] . " " . $contact['lastname'] . " habite au : " . $contact['address'] . ".<br/>";
     echo "C'est un : " . $contact['gender'] . " et il est né le : " . $contact['birthdate'] . ".<br/>";
     echo "Son addresse email est : " . $contact['mail'] . ".<br/><br/>";
-}
+} */
