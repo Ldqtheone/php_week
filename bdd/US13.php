@@ -23,10 +23,10 @@ $database = new Database("php_week");
             <th> Naissance </th>
         </tr>
     </thead>
+    <tbody>
     <?php
     $contacts = $database->selectAll('contacts');
     foreach ($contacts as $contact) { ?>
-    <tbody>
         <tr>
             <td><?= $contact['firstname']; ?></td>
             <td><?= $contact['lastname']; ?></td>

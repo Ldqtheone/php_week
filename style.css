@@ -51,9 +51,20 @@ table {
     text-align: center;
     width: 100%;
 }
- thead tr th{
-     padding-bottom: 50px;
- }
+    tr:nth-child(even) {
+        background: white;
+    }
+    tr:nth-child(odd) {
+        background: lightblue;
+    }
+
+    thead tr{
+        background: lightslategrey !important;
+    }
+
+        thead tr th{
+         padding-bottom: 50px;
+        }
 
 #footerBandeRed{
     height: 60px;
