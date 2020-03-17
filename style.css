@@ -47,6 +47,14 @@ footer div{
     margin: 0;
 }
 
+table {
+    text-align: center;
+    width: 100%;
+}
+ thead tr th{
+     padding-bottom: 50px;
+ }
+
 #footerBandeRed{
     height: 60px;
     padding: 20px 0px;

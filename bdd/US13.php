@@ -12,18 +12,31 @@ $database = new Database("php_week");
 <body>
 <?php include '../header.php' ?>
 <h2 id="titleContact">Mes contacts :</h2>
-
-<?php
-
-$contacts = $database->selectAll('contacts');
-
-//var_dump($contacts);
-
-foreach ($contacts as $contact){
-    echo $contact['firstname'] . " " . $contact['lastname'] . " habite au : " . $contact['address'] . ".<br/>";
-    echo "C'est un : " . $contact['gender'] . " et il est né le : " . $contact['birthdate'] . ".<br/>";
-    echo "Son addresse email est : " . $contact['mail'] . ".<br/><br/>";
-} ?>
+<table>
+    <thead>
+        <tr>
+            <th> Nom </th>
+            <th> Prenom </th>
+            <th> Email </th>
+            <th> Adresse </th>
+            <th> Sexe </th>
+            <th> Naissance </th>
+        </tr>
+    </thead>
+    <?php
+    $contacts = $database->selectAll('contacts');
+    foreach ($contacts as $contact) { ?>
+    <tbody>
+        <tr>
+            <td><?= $contact['firstname']; ?></td>
+            <td><?= $contact['lastname']; ?></td>
+            <td><?= $contact['mail']; ?></td>
+            <td><?= $contact['address']; ?></td>
+            <td><?= $contact['gender']; ?></td>
+            <td><?= $contact['birthdate']; } ?></td>
+        </tr>
+    </tbody>
+</table>
 <?php include '../footer.php' ?>
 </body>
 </html>
