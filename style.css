@@ -114,6 +114,32 @@ table {
     color : white;
 }
 
+/* Dino css */
+
+.dinoLog{
+    margin: 0px;
+    font-style: italic;
+}
+
+#formDino {
+    display: flex;
+    flex-direction: column;
+}
+
+#formDino div {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#formDino div *{
+    align-content: center;
+}
+
+#myDinoDiv p {
+    color: cadetblue;
+}
+
 /* Auther css */
 
 body{
