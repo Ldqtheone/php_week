@@ -12,23 +12,19 @@ class Triceratops
      */
     private $life;
     private $damage;
-    private $gender;
-    private $story;
 
     /**
      * Triceratops constructor.
+     * @param $life
+     * @param $damage
+     * @param $isMale
      */
-    public function __construct($life, $damage, $gender, $story)
+    public function __construct($life, $damage, $isMale)
     {
         $this->life   = $life;
         $this->damage = $damage;
-        $this->gender = $gender;
-        $this->story = $story;
-
-        echo "Triceratops { Vie: ".$this->life.", Dégats: ".$this->damage.", Sexe: ".$this->gender. "} créé.";
-        echo "<br/>";
-        echo "Son histoire : ". $story . "";
-        echo "<br/>";
+        $this->isMale = $isMale;
+        echo "<p class='dinoLog'>Triceratops { life: " . $this->life . ", damage: " . $this->damage . ", sex : " . ($this->isMale ? "Male" : "Female") . "} created.</p><br />";
     }
 
     /**
@@ -37,8 +33,7 @@ class Triceratops
      */
     public function getLife()
     {
-        echo "Triceratops life: ".$this->life;
-        echo "<br/>";
+        echo "<p class='dinoLog'>Triceratops life: " . $this->life . "</p><br />";
         return $this->life;
     }
 
@@ -48,8 +43,7 @@ class Triceratops
      */
     public function attackMortel($target)
     {
-        echo "Triceratops mortal attack: ".$target->getLife()." damage";
-        echo "<br/>";
+        echo "<p class='dinoLog'>Triceratops mortal attack: " . $target->getLife() . " damage</p><br />";
         $target->receiveDamage($target->getLife());
     }
 
@@ -59,8 +53,7 @@ class Triceratops
      */
     public function receiveDamage($damage)
     {
-        echo "Triceratops receive: ".$damage." damage";
-        echo "<br/>";
+        echo "<p class='dinoLog'>Triceratops receive: " . $damage . " damage</p><br />";
         $this->life -= $damage;
     }
 }
