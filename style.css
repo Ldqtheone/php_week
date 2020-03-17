@@ -149,3 +149,19 @@ body{
 main{
     margin: 5% 10%;
 }
+
+h2{
+    text-decoration: underline;
+}
+
+.story{
+    transition-duration: 0.5s;
+    padding-left: 5px;
+}
+
+.story:hover{
+    transition-duration: 0.5s;
+    border-left: 3px solid rgb(206, 6, 43);
+    padding-left: 10px;
+
+}

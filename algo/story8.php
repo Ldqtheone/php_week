@@ -1,5 +1,5 @@
 <h2>Story 8</h2>
-<div>
+<div class="story">
     <h3>Decimal to Hexadecimal :</h3>
     <form id="formStory8" method="POST" action="#">
         <label for="hexadecimalNumber">Enter a number : </label>

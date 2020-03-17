@@ -1,5 +1,5 @@
 <h2>Story 4</h2>
-<div>
+<div class="story">
     <h3>Past Event :</h3>
     <form id="formStory4" method="POST" action="#">
         <label for="time">Time in seconds : </label>

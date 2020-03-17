@@ -1,5 +1,5 @@
 <h2>Story 10</h2>
-<div>
+<div class="story">
     <h3>Email and Birth :</h3>
     <form id="formStory10" method="POST" action="">
         <label for="email">Enter your mail : </label>

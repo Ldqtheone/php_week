@@ -1,5 +1,5 @@
 <h2>Story 6</h2>
-<div>
+<div class="story">
     <h3>Roman Number :</h3>
     <form id="formStory6" method="POST" action="#">
         <label for="romanNumber">Enter a number : </label>

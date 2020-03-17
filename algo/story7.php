@@ -1,5 +1,5 @@
 <h2>Story 7</h2>
-<div>
+<div class="story">
     <h3>Factorial :</h3>
     <form id="formStory7" method="POST" action="#">
         <label for="factorialNumber">Enter a number : </label>

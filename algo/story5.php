@@ -1,5 +1,5 @@
 <h2>Story 5</h2>
-<div>
+<div class="story">
     <h3>Minimum Number :</h3>
     <form id="formStory5" method="POST" action="#">
         <label for="numberOne" >Number 1 : </label>

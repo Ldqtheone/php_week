@@ -1,5 +1,5 @@
 <h2>Story 11</h2>
-<div>
+<div class="story">
     <h3>Tri du tableau :</h3>
     <form id="formStory11" method="POST" action="">
         <label for="namesArray">Enter names with ',' separator : </label>

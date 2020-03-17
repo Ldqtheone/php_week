@@ -1,5 +1,5 @@
 <h2>Story 9</h2>
-<div>
+<div class="story">
     <h3>Decimal to Binary :</h3>
     <form id="formStory9" method="POST" action="">
         <label for="binaryNumber">Enter a number : </label>
