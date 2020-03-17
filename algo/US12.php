@@ -1,6 +1,6 @@
 <?php
     require 'Database.php';
-    $database = new Database();
+    $database = new Database("php_week");
 ?>
 <form method="POST" id="formContact" action="">
     <h2 id="titleContact">Vos coordonnées :</h2>
@@ -33,10 +33,10 @@ if(isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && 
         'firstname' => $_POST['prenom'],
         'lastname' => $_POST['nom'],
         'birthdate' => $_POST['birthday'],
-        'email' => $_POST['email'],
+        'mail' => $_POST['email'],
         'address' => $_POST['address'],
         'gender' => $_POST['sex']
     );
 
-    $database->insertInto('contact', $user_data);
+    $database->insertInto('contacts', $user_data);
 }

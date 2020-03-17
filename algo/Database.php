@@ -5,8 +5,10 @@ class Database
     private $login;
     private $pass;
     private $connec;
+    private $dbname;
 
-    public function __construct($login ='root', $pass=''){
+    public function __construct($dbname, $login ='root', $pass=''){
+        $this->dbname = $dbname;
         $this->login = $login;
         $this->pass = $pass;
         $this->connexion();
@@ -15,7 +17,7 @@ class Database
     private function connexion(){
         try
         {
-            $bdd = new PDO('mysql:host=localhost;dbname=php_week', $this->login, $this->pass);
+            $bdd = new PDO('mysql:host=localhost;dbname='. $this->dbname, $this->login, $this->pass);
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             $this->connec = $bdd;
@@ -29,7 +31,7 @@ class Database
 
     public function insertInto($tableName , $info){
 
-        var_dump($info);
+        // var_dump($info);
 
         $sql = "INSERT INTO ". $tableName;
         $fields = array();
@@ -46,7 +48,7 @@ class Database
         $sql = rtrim($sql, ',');
 
         $stmt = $this->connec->prepare($sql);
-        $stmt->execute($sql);
+        $stmt->execute();
     }
 }
 ?>
