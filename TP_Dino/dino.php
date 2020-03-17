@@ -13,14 +13,28 @@
 include 'Tyrex.php';
 include 'Triceratops.php';
 
-$Tyrex = new Tyrex();
-$Triceratops = new Triceratops();
+$tyrex = new Tyrex();
+echo "<br/>";
+$triceratops = new Triceratops();
+echo "<br/>";
+$tyrex->attackSpecial($triceratops);
+echo "<br/>";
+$tyrex->getLife();
+echo "<br/>";
+$triceratops->getLife();
+echo "<br/>";
+$tyrex->attackDouce($triceratops);
+echo "<br/>";
+$tyrex->getLife();
+echo "<br/>";
+$triceratops->getLife();
+echo "<br/>";
+$triceratops->attackMortel($tyrex);
+echo "<br/>";
+$tyrex->getLife();
+echo "<br/>";
+$triceratops->getLife();
 
-$Tyrex->attackSpecial($Triceratops);
-$Tyrex->attackDouce($Triceratops);
-
-$Triceratops->attackMortel($Tyrex);
-echo $Tyrex->getLife();
 ?>
 <?php include '../footer.php' ?>
 </body>

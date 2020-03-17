@@ -16,7 +16,7 @@
 </div>
 <div class="nbDone">
     <H2> Number Done : </H2>
-    <p>12</p>
+    <p>11</p>
 </div>
 <div class="nbUndone">
     <h2>Number Undone :</h2>

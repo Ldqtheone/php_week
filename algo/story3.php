@@ -24,8 +24,9 @@ function printPrime($number){
 
 ?>
 
+<h2>Story 3</h2>
 <div class="premiumNumber">
-    <h2> Nombre premier : </h2>
+    <h3> Nombre premier : </h3>
     <form method="POST" action="">
         <input type="number" name="prems" placeholder="Entrez un nombre premier">
         <input type="submit" name="Envoyer">
