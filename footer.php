@@ -9,6 +9,6 @@
         </ul>
     </div>
     <div id="copyright">
-        <p>© 2020 Copyright <a href="poulpe.html" target="_blank">Kraken</a>, Inc | <a href="https://codingfactory.fr/" target="_blank">Powered by CodingFactory</a> | <a href="mentionsLegals.html">Mentions Légales</a></p>
+        <p>© 2020 Copyright BRAC, Inc | <a href="https://codingfactory.fr/" target="_blank">Powered by CodingFactory</a> | Mentions Légales</p>
     </div>
 </footer>
