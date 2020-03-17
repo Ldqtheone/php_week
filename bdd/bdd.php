@@ -10,7 +10,7 @@
 <h3>Accès aux contacts : </h3>
 <a href="US13.php">Voir mes contacts</a>
 <?php include 'US12.php' ?>
-<!-- <?php include 'US14.php'?> -->
+<?php include 'US14.php'?>
 <?php include '../footer.php' ?>
 </body>
 </html>

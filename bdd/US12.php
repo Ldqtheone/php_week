@@ -36,13 +36,3 @@ if(isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && 
 
     $database->insertInto('contacts', $user_data);
 }
-
-/* $contacts = $database->selectAll('contacts');
-
-//var_dump($contacts);
-
-foreach ($contacts as $contact){
-    echo $contact['firstname'] . " " . $contact['lastname'] . " habite au : " . $contact['address'] . ".<br/>";
-    echo "C'est un : " . $contact['gender'] . " et il est né le : " . $contact['birthdate'] . ".<br/>";
-    echo "Son addresse email est : " . $contact['mail'] . ".<br/><br/>";
-} */
