@@ -50,5 +50,13 @@ class Database
         $stmt = $this->connec->prepare($sql);
         $stmt->execute();
     }
+
+    public function selectAll($tableName){
+        $sql = "SELECT * FROM " . $tableName;
+        $result = $this->connec->prepare($sql);
+        $result->execute();
+
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
