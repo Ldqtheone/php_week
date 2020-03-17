@@ -16,10 +16,13 @@ class Algorithmie
      */
     public function getPrimaryNumber($number)
     {
-        echo "Les nombres premiers de 0 à " . $number . " sont : ";
-        for ($i = 3; $i < $number; $i++) {
+        echo "Jusqu'à " . $number . " les nombres premiers sont : ";
+        for ($i = 3; $i < $number; $i++)
+        {
             if($this->isPrime($i))
+            {
                 echo $i . ' ; ';
+            }
         }
     }
 
@@ -31,10 +34,12 @@ class Algorithmie
     private function isPrime($number)
     {
         // boucle de 2 au nombre à tester
-        for ($i = 2; $i < $number; $i++) {
-            //test du quotien de la division
-            if ($number % $i == 0) {
-                return FALSE;
+        for ($i = 2; $i < $number; $i++)
+        {
+            //test du quotient de la division
+            if ($number % $i === 0)
+            {
+                return false;
             }
         }
         return true;
@@ -60,17 +65,22 @@ class Algorithmie
      */
     public function getMin($numberOne, $numberTwo, $numberThree)
     {
-        $message = null;
-        if ($numberOne < $numberTwo && $numberOne < $numberThree) {
-            $message = "Le nombre le plus  petit est " . $numberOne . ' ';
-        } elseif ($numberTwo < $numberOne && $numberTwo < $numberThree) {
-            $message = "Le nombre le plus  petit est " . $numberTwo . ' ';
-        } elseif ($numberThree < $numberOne && $numberThree < $numberTwo) {
-            $message = "Le nombre le plus  petit est " . $numberThree . ' ';
-        } else {
-            $message = "il y a une égalité";
+        if ($numberOne < $numberTwo && $numberOne < $numberThree)
+        {
+             echo "Le nombre le plus  petit est " . $numberOne . ' ';
         }
-        echo $message;
+        elseif ($numberTwo < $numberOne && $numberTwo < $numberThree)
+        {
+            echo "Le nombre le plus  petit est " . $numberTwo . ' ';
+        }
+        elseif ($numberThree < $numberOne && $numberThree < $numberTwo)
+        {
+            echo "Le nombre le plus  petit est " . $numberThree . ' ';
+        }
+        else
+        {
+            echo "il y a une égalité";
+        }
     }
 
     /**
@@ -80,29 +90,57 @@ class Algorithmie
      */
     public function converterRomanNumber($number)
     {
-        $T_unit = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
-        $T_diz = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-        $T_cent = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-        $T_mil = ["", "M", "MM", "MMM", "MMMM"];
+        /*if ($number < 5000 && $number > 0)
+        {
+            $T_unit = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+            $T_diz = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+            $T_cent = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+            $T_mil = ["", "M", "MM", "MMM", "MMMM"];
 
-        if ($number < 5000 && $number > 0) {
             $num = str_split($number);
             $unit = $num[count($num) - 1];
             $romain = $T_unit[$unit];
-            if ($number >= 10) {
+            if ($number >= 10)
+            {
                 $diz = $num[count($num) - 2];
                 $romain = $T_diz[$diz] . $T_unit[$unit];
             }
-            if ($number >= 100) {
+            if ($number >= 100)
+            {
                 $cent = $num[count($num) - 3];
                 $romain = $T_cent[$cent] . $T_diz[$diz] . $T_unit[$unit];
             }
-            if ($number >= 1000) {
+            if ($number >= 1000)
+            {
                 $mil = $num[count($num) - 4];
                 $romain = $T_mil[$mil] . $T_cent[$cent] . $T_diz[$diz] . $T_unit[$unit];
             }
             echo "L'équivalent en nombre romain est  : " . $romain . ' ';
-        } else {
+        }
+        else
+        {
+            echo "Votre nombre n'est pas compris dans la plage ]0;5000[";
+        }*/
+
+        if ($number > 0 && $number < 5000)
+        {
+            $alphabet = [
+                ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+                ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+                ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+                ["", "M", "MM", "MMM", "MMMM"]
+            ];
+
+            $chars = str_split($number);
+            $result = "";
+            for ($i = 0; $i < sizeof($chars); $i++)
+            {
+                $result = $result . $alphabet[sizeof($chars) - 1 - $i][intval($chars[$i])];
+            }
+            echo "L'équivalent de " . $number . " en nombre romain est  : " . $result . ' ';
+        }
+        else
+        {
             echo "Votre nombre n'est pas compris dans la plage ]0;5000[";
         }
     }
@@ -114,8 +152,9 @@ class Algorithmie
     public function factorial($nbr)
     {
         $fact = 1;
-        for ($i = 1; $i <= $nbr; $i++) {
-            $fact = $i * $fact;
+        for ($i = 1; $i <= $nbr; $i++)
+        {
+            $fact *= $i;
         }
         echo "La factorielle de " . $nbr . " est " . $fact;
     }
@@ -130,7 +169,8 @@ class Algorithmie
         $decimal = abs($decimal);
         $add = $decimal % 16;
         $rem = $add;
-        switch ($add) {
+        switch ($add)
+        {
             case 10 :
                 $add = "A";
                 break;
@@ -152,9 +192,12 @@ class Algorithmie
             default :
                 break;
         }
-        if ($decimal <= 1) {
+        if ($decimal <= 1)
+        {
             echo (string)$decimal;
-        } else {
+        }
+        else
+        {
             echo (string)$this->convertDecimalToHexadecimal(($decimal - $rem) / 16) . (string)$add;
         }
     }
@@ -170,49 +213,65 @@ class Algorithmie
         $add = $decimal % 2;
         $rem = $add;
 
-        if ($decimal <= 1) {
+        if ($decimal <= 1)
+        {
             echo (string)$decimal;
-        } else {
+        }
+        else
+        {
             echo (string)$this->convertDecimalToBinary(($decimal - $rem) / 2) . (string)$add;
         }
     }
 
-
-
-
-
+    /**
+     * Function associate with story 10
+     * @param $mail
+     * @param $date
+     */
     public function checkValues($mail, $date)
     {
-        if (strlen($mail) > 3) {
+        if (strlen($mail) > 3)
+        {
             if (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $mail))
+            {
                 echo 'L\'adresse n\'est pas valide';
-            else {
-                if (preg_match(" /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/ ", $date))
-                    echo "La date et l'email sont valides";
-                else
-                    echo "La date doit être au format DD/MM/YYYY";
             }
-        } else
+            else
+            {
+                if (preg_match(" /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/ ", $date))
+                {
+                    echo "La date et l'email sont valides";
+                }
+                else
+                {
+                    echo "La date doit être au format DD/MM/YYYY";
+                }
+            }
+        }
+        else
+        {
             echo 'L\'adresse email doit contenir plus de 3 caractères';
+        }
     }
 
-
+    /**
+     * Function associate with story 11
+     * @param $names
+     */
     public function mySort($names)
     {
         $newTab = explode(",", $names);
 
-        usort($newTab, function ($left, $right) {
-            $left = $left[1] . $left[2];
-            $right = $right[1] . $right[2];
-
-            return strcmp($left, $right);
-        });
+        usort($newTab,
+            function ($left, $right)
+            {
+                $left = $left[1] . $left[2];
+                $right = $right[1] . $right[2];
+                return strcmp($left, $right);
+            });
 
         echo implode(",", $newTab);
     }
-
-
 }
 
 ?>
-
