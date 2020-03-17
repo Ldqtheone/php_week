@@ -20,7 +20,7 @@ class Tyrex
     {
         $this->life   = 500;
         $this->damage = 50;
-        echo "Tyrex { life: ".$this->life.", damage: ".$this->damage." } created. ------ ".PHP_EOL;
+        echo "Tyrex { life: ".$this->life.", damage: ".$this->damage." } created.";
     }
 
     /**
@@ -29,7 +29,7 @@ class Tyrex
      */
     public function getLife()
     {
-        echo "Tyrex life: ".$this->life." ------ ".PHP_EOL;
+        echo "Tyrex life: ".$this->life;
         return $this->life;
     }
 
@@ -40,7 +40,7 @@ class Tyrex
      */
     public function attackDouce($target)
     {
-        echo "Tyrex normal attack: ".($this->damage)." damage ------ ".PHP_EOL;
+        echo "Tyrex normal attack: ".($this->damage)." damage";
         $target->receiveDamage($this->damage);
     }
 
@@ -50,7 +50,7 @@ class Tyrex
      */
     public function attackSpecial($target)
     {
-        echo "Tyrex special attack: ".($this->damage * 2)." damage ------ ".PHP_EOL;
+        echo "Tyrex special attack: ".($this->damage * 2)." damage";
         $target->receiveDamage($this->damage * 2);
     }
 
@@ -60,7 +60,7 @@ class Tyrex
      */
     public function receiveDamage($damage)
     {
-        echo "Tyrex receive: ".$damage." damage ------ ".PHP_EOL;
+        echo "Tyrex receive: ".$damage." damage";
         $this->life -= $damage;
     }
 }
