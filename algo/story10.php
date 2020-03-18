@@ -1,21 +1,21 @@
-<?php
-include 'LearnRegex.php' ?>
-
 <h2>Story 10</h2>
-<div class="emailAndBirth">
-    <h3> Email and Birth : </h3>
-    <form method="POST" action="">
-        <input type="text" name="email" placeholder="Entrez votre email">
-        <input type="text" name="birthDate">
-        <input type="submit" name="Envoyer">
+<div class="story">
+    <h3>Email and Birth :</h3>
+    <form id="formStory10" method="POST" action="">
+        <label for="email">Enter your mail : </label>
+        <input type="text" name="email" placeholder="email">
+
+        <label for="birthDate">Enter your birth date : </label>
+        <input type="date" name="birthDate">
+
+        <input type="submit" name="submitStory10" value="Send">
     </form>
     <p>
         <?php
-
-        $checkValues = new LearnRegex();
-
-        if (isset($_POST['email']) && isset($_POST['birthDate']))
-            $checkValues->checkValues($_POST['email'], $_POST['birthDate']);
+        if (isset($_POST['submitStory10']))
+        {
+            $algorithmie->checkValues($_POST['email'], $_POST['birthDate']);
+        }
         ?>
     </p>
 </div>

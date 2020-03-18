@@ -12,24 +12,20 @@ class Tyrex
      */
     private $life;
     private $damage;
-    private $gender;
-    private $story;
+    private $isMale;
 
     /**
      * Tyrex constructor.
+     * @param $life
+     * @param $damage
+     * @param $isMale
      */
-    public function __construct($life, $damage, $gender, $story)
+    public function __construct($life, $damage, $isMale)
     {
         $this->life   = $life;
         $this->damage = $damage;
-        $this->gender = $gender;
-        $this->story = $story;
-
-        echo "Tyrex { Vie: ".$this->life.", Dégats: ".$this->damage.", Sexe: ".$this->gender. "} créé.";
-        echo "<br/>";
-        echo "Son histoire : ". $story . "";
-
-        echo "<br/>";
+        $this->isMale = $isMale;
+        echo "<p class='dinoLog'>Tyrex { life: " . $this->life . ", damage: " . $this->damage . ", sex : " . ($this->isMale ? "Male" : "Female") . "} created.</p><br />";
     }
 
     /**
@@ -38,10 +34,10 @@ class Tyrex
      */
     public function getLife()
     {
-        echo "Tyrex life: ".$this->life;
-        echo "<br/>";
+        echo "<p class='dinoLog'>Tyrex life: " . $this->life . "</p><br />";
         return $this->life;
     }
+
 
     /**
      * Do a normal attack
@@ -49,8 +45,7 @@ class Tyrex
      */
     public function attackDouce($target)
     {
-        echo "Tyrex normal attack: ".($this->damage)." damage";
-        echo "<br/>";
+        echo "<p class='dinoLog'>Tyrex normal attack: " . $this->damage . " damage</p><br />";
         $target->receiveDamage($this->damage);
     }
 
@@ -60,19 +55,17 @@ class Tyrex
      */
     public function attackSpecial($target)
     {
-        echo "Tyrex special attack: ".($this->damage * 2)." damage";
-        echo "<br/>";
+        echo "<p class='dinoLog'>Tyrex special attack: " . ($this->damage * 2) . " damage</p><br />";
         $target->receiveDamage($this->damage * 2);
     }
 
     /**
      * Receive damage
-     * @param $damage the damage received
+     * @param $damage  the damage received
      */
     public function receiveDamage($damage)
     {
-        echo "Tyrex receive: ".$damage." damage";
-        echo "<br/>";
+        echo "<p class='dinoLog'>Tyrex receive: " . $damage . " damage</p><br />";
         $this->life -= $damage;
     }
 }

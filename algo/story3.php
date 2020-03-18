@@ -1,18 +1,17 @@
-<?php
-include 'PremiumNumberClass.php'
-?>
-
 <h2>Story 3</h2>
-<div class="premiumNumber">
-    <h3> Nombre premier : </h3>
-    <form method="POST" action="">
-        <input type="number" name="prems" placeholder="Entrez un nombre premier">
-        <input type="submit" name="Envoyer">
+<div class="story">
+    <h3>Primary Number :</h3>
+    <form id="formStory3" method="POST" action="#">
+        <label for="primaryNumber">Enter a number :</label>
+        <input type="number" name="primaryNumber" placeholder="Number">
+        <input type="submit" name="submitStory3" value="Send">
     </form>
     <p>
         <?php
-        $printPrime = new PremiumNumberClass();
-        if (isset($_POST['prems']))
-            $printPrime->printPrime($_POST['prems']);
-        ?></p>
+        if (isset($_POST["submitStory3"]))
+        {
+            $algorithmie->getPrimaryNumber($_POST["primaryNumber"]);
+        }
+        ?>
+    </p>
 </div>

@@ -1,18 +1,17 @@
-<?php
-include 'Factorielle.php';
-?>
-
 <h2>Story 7</h2>
-<div class="factorielle">
-    <h3> Nombre premier : </h3>
-    <form method="POST" action="">
-        <input type="number" name="fact" placeholder="Entrez un nombre">
-        <input type="submit" name="Envoyer">
+<div class="story">
+    <h3>Factorial :</h3>
+    <form id="formStory7" method="POST" action="#">
+        <label for="factorialNumber">Enter a number : </label>
+        <input type="number" name="factorialNumber" placeholder="Number">
+        <input type="submit" name="submitStory7" value="Send">
     </form>
     <p>
         <?php
-        $factorielleNumber = new Factorielle();
-        if (isset($_POST['fact']))
-            $factorielleNumber->fact($_POST['fact']);
-        ?></p>
+        if (isset($_POST["submitStory7"]))
+        {
+            $algorithmie->factorial($_POST['factorialNumber']);
+        }
+        ?>
+    </p>
 </div>
