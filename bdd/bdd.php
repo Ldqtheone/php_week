@@ -19,6 +19,7 @@
             <a href="story13.php">Voir mes contacts</a>
             <?php include 'story12.php' ?>
             <?php include 'story14.php' ?>
+
         </main>
         <?php include '../footer.php' ?>
     </body>

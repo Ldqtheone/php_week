@@ -21,6 +21,7 @@ class Tools
      * @param bool $isChecked optional : if the input is checked
      */
     public function createInput($type, $name, $label=null, $placeholder=null, $value=null, $isRequired=false, $isChecked=false){
+
         if ($label !== null)
         {
             echo '<label for="' . $name . '">' . $label . '</label>';
@@ -31,6 +32,7 @@ class Tools
         $placeholder = $placeholder === null ? '' : ' placeholder="' . $placeholder . '" ';
         $value = $value === null ? '' : ' value="' . $value . '" ';
         echo '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"'. $value . $placeholder . $required . $checked . '>';
+
     }
 
     /**

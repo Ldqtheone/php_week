@@ -58,5 +58,7 @@ class Database
 
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
 }
 ?>
