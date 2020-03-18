@@ -229,18 +229,30 @@ class Algorithmie
      */
     public function mySort($names)
     {
-
-        $newTab = explode(",", mb_strtolower($names));
-
-        usort($newTab,
+        $array = explode(",", mb_strtolower(str_replace(" ", "", $names)));
+        usort($array,
             function ($left, $right)
             {
-                $left = $left[1] . $left[2];
-                $right = $right[1] . $right[2];
-                return strcmp($left, $right);
+                if (strlen($left) < 2 || strlen($right) < 2)
+                {
+                    return strcmp($left, $right);
+                }
+
+                $index = 1;
+                $compare = 0;
+                while ($compare === 0)
+                {
+                    if (strlen($left) - 1 < $index || strlen($right) - 1 < $index)
+                    {
+                        return -1;
+                    }
+                    $compare = strcmp($left[$index], $right[$index]);
+                    $index++;
+                }
+                return $compare;
             });
 
-        echo implode(",", $newTab);
+        echo "<p>Names sorted are : " . implode(' ; ', $array) . "</p>";
     }
 }
 
