@@ -30,14 +30,14 @@
     </form>
 
     <?php
-        if(isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['birthday']) &&
-            isset($_POST['address']))
+        if(isset($_POST['contactFirstName']) && isset($_POST['contactName']) && isset($_POST['contactEmail']) && isset($_POST['contactBirthday']) &&
+            isset($_POST['contactAddress']))
         {
             $user_data = array(
-                'firstName' => $_POST['contactFirstName'],
-                'name' => $_POST['contactName'],
-                'birthday' => $_POST['contactBirthday'],
-                'email' => $_POST['contactEmail'],
+                'firstname' => $_POST['contactFirstName'],
+                'lastname' => $_POST['contactName'],
+                'birthdate' => $_POST['contactBirthday'],
+                'mail' => $_POST['contactEmail'],
                 'address' => $_POST['contactAddress'],
                 'gender' => $_POST['contactGender']
             );

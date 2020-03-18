@@ -29,13 +29,13 @@
                 <?php
                 $contacts = $database->selectAll('contacts');
                 foreach ($contacts as $key => $contact) { ?>
-                    <tr class="contactLine" <?php (string)($key % 2) ?>>
-                        <td><?= $contact['firstName']; ?></td>
-                        <td><?= $contact['name']; ?></td>
-                        <td><?= $contact['email']; ?></td>
+                    <tr>
+                        <td><?= $contact['firstname']; ?></td>
+                        <td><?= $contact['lastname']; ?></td>
+                        <td><?= $contact['mail']; ?></td>
                         <td><?= $contact['address']; ?></td>
                         <td><?= $contact['gender']; ?></td>
-                        <td><?= $contact['birthday']; } ?></td>
+                        <td><?= $contact['birthdate']; } ?></td>
                     </tr>
                 </tbody>
             </table>

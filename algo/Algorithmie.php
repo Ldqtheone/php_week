@@ -238,7 +238,7 @@ class Algorithmie
             }
             else
             {
-                if (preg_match(" /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/ ", $date))
+                if (preg_match(" /^[0-9]{1,4}\-[0-9]{1,2}\-[0-9]{2}$/ ", $date))
                 {
                     echo "La date et l'email sont valides";
                 }
