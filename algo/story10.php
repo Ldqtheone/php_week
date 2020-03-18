@@ -1,7 +1,7 @@
 <h2>Story 10</h2>
 <div class="story">
     <h3>Email and Birth :</h3>
-    <form id="formStory10" method="POST" action="">
+    <form id="formStory10" method="POST" action="#">
         <?php
             $tools->createInput("email", "email", "Enter your email : ", "email", null, true);
 

@@ -1,7 +1,7 @@
 <h2>Story 9</h2>
 <div class="story">
     <h3>Decimal to Binary :</h3>
-    <form id="formStory9" method="POST" action="">
+    <form id="formStory9" method="POST" action="#">
         <?php
             $tools->createInput("number", "binaryNumber", "Enter a number : ", "Number", null, true);
             $tools->createInput("submit", "submitStory9", null, null, "Send");
