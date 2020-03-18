@@ -3,23 +3,35 @@
         <h2 id="titleContact">Vos coordonnées :</h2>
 
         <div class="contactContent">
-            <input type="text" id="nom" name="nom" placeholder="Nom" required>
-            <input type="text" id="prenom" name="prenom" placeholder="prénom" required>
+            <?php
 
-            <input type="date" id="birthday" name="birthday" placeholder="birthday">
+                echo "<br/>";
+                $tools->createInput("text", "nom", null, "Votre nom :", true);
+                echo "<br/>";
 
-            <input type="email" id="email" name="email" placeholder="Email" required>
+                echo "<br/>";
+                $tools->createInput("text", "prenom", null, "Votre prenom: ", true);
+                echo "<br/>";
 
-            <input type="text" id="address" name="address" placeholder="Votre adresse">
+                echo "<br/>";
+                $tools->createInput("date", "birthday", null, "Votre date de naissance : ", true);
+                echo "<br/>";
 
-            <input type="radio" id="male" name="sex" value="male" checked><label for="male">male</label>
-            <input type="radio" id="female" name="sex" value="female"><label for="female">female</label>
+                echo "<br/>";
+                $tools->createInput("email", "email", null, "Votre Email : ", true);
+                echo "<br/>";
 
-        </div>
+                echo "<br/>";
+                $tools->createInput("text", "address", null, "Votre addresse : ", true);
+                echo "<br/>";
 
-        <div id="wrapBouton">
-            <input type="submit" id="envoi">
-        </div>
+                $tools->createRadio(["Homme", "Femme"], "Sexe : ", "sex");
+                echo "<br/>";
+
+                echo '<div id = "wrapButton">';
+                $tools->createInput("submit", "submitContact", "Envoyer", null, true);
+                echo '</div>';
+        ?>
     </form>
 
     <?php
