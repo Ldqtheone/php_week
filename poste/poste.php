@@ -1,3 +1,9 @@
+<?php
+require '../bdd/Database.php';
+require '../Tools.php';
+$database = new Database("php_week");
+$tools = new Tools();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -9,6 +15,7 @@
     <body>
     <?php include '../header.php' ?>
     <main>
+        <?php include 'story15.php' ?>
     </main>
     <?php include '../footer.php' ?>
     </body>
