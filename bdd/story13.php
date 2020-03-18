@@ -28,14 +28,14 @@
                 <tbody>
                 <?php
                 $contacts = $database->selectAll('contacts');
-                foreach ($contacts as $contact) { ?>
-                    <tr>
-                        <td><?= $contact['firstname']; ?></td>
-                        <td><?= $contact['lastname']; ?></td>
-                        <td><?= $contact['mail']; ?></td>
+                foreach ($contacts as $key => $contact) { ?>
+                    <tr class="contactLine" <?php (string)($key % 2) ?>>
+                        <td><?= $contact['firstName']; ?></td>
+                        <td><?= $contact['name']; ?></td>
+                        <td><?= $contact['email']; ?></td>
                         <td><?= $contact['address']; ?></td>
                         <td><?= $contact['gender']; ?></td>
-                        <td><?= $contact['birthdate']; } ?></td>
+                        <td><?= $contact['birthday']; } ?></td>
                     </tr>
                 </tbody>
             </table>

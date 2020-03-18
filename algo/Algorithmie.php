@@ -194,11 +194,11 @@ class Algorithmie
         }
         if ($decimal <= 1)
         {
-            echo (string)$decimal;
+            return (string)$decimal;
         }
         else
         {
-            echo (string)$this->convertDecimalToHexadecimal(($decimal - $rem) / 16) . (string)$add;
+            return (string)$this->convertDecimalToHexadecimal(($decimal - $rem) / 16) . (string)$add;
         }
     }
 
@@ -215,11 +215,11 @@ class Algorithmie
 
         if ($decimal <= 1)
         {
-            echo (string)$decimal;
+            return (string)$decimal;
         }
         else
         {
-            echo (string)$this->convertDecimalToBinary(($decimal - $rem) / 2) . (string)$add;
+            return (string)$this->convertDecimalToBinary(($decimal - $rem) / 2) . (string)$add;
         }
     }
 

@@ -1,24 +1,31 @@
 <div class="story">
-    <form method="POST" id="formContact" action="">
+    <form method="POST" id="formContact" action="#">
         <h2 id="titleContact">Vos coordonnées :</h2>
 
         <div class="contactContent">
-            <input type="text" id="nom" name="nom" placeholder="Nom" required>
-            <input type="text" id="prenom" name="prenom" placeholder="prénom" required>
+            <?php
 
-            <input type="date" id="birthday" name="birthday" placeholder="birthday">
+                $tools->createInput("text", "contactFirstName", "Enter your first name : ", "First Name", null, true);
+                echo "<br/>";
 
-            <input type="email" id="email" name="email" placeholder="Email" required>
+                $tools->createInput("text", "contactName", "Enter your name : ", "Name", null, true);
+                echo "<br/>";
 
-            <input type="text" id="address" name="address" placeholder="Votre adresse">
+                $tools->createInput("date", "contactBirthday", "Enter your birthday : ", "Birthday", null, true);
 
-            <input type="radio" id="male" name="sex" value="male" checked><label for="male">male</label>
-            <input type="radio" id="female" name="sex" value="female"><label for="female">female</label>
+                $tools->createInput("email", "contactEmail", "Enter your email : ", "Email", null, true);
+                echo "<br/>";
 
-        </div>
+                $tools->createInput("text", "contactAddress", "Enter your address : ", "Address", null, true);
+                echo "<br/>";
 
-        <div id="wrapBouton">
-            <input type="submit" id="envoi">
+                $tools->createRadio("contactGender", ["Man", "Woman"], "Gender : ");
+                echo "<br/>";
+
+                echo '<div id = "wrapButton">';
+                    $tools->createInput("submit", "submitContact", null, null, "Send", true);
+                echo '</div>';
+            ?>
         </div>
     </form>
 
@@ -27,12 +34,12 @@
             isset($_POST['address']))
         {
             $user_data = array(
-                'firstname' => $_POST['prenom'],
-                'lastname' => $_POST['nom'],
-                'birthdate' => $_POST['birthday'],
-                'mail' => $_POST['email'],
-                'address' => $_POST['address'],
-                'gender' => $_POST['sex']
+                'firstName' => $_POST['contactFirstName'],
+                'name' => $_POST['contactName'],
+                'birthday' => $_POST['contactBirthday'],
+                'email' => $_POST['contactEmail'],
+                'address' => $_POST['contactAddress'],
+                'gender' => $_POST['contactGender']
             );
 
             $database->insertInto('contacts', $user_data);
