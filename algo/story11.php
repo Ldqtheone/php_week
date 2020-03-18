@@ -2,9 +2,6 @@
 <div class="story">
     <h3>Tri du tableau :</h3>
     <form id="formStory11" method="POST" action="">
-        <!--<label for="namesArray">Enter names with ',' separator : </label>
-        <input type="text" name="namesArray" placeholder="Name 1, Name 2, ...">
-        <input type="submit" name="submitStory11" value="Send">-->
         <?php
             $tools->createInput("text", "namesArray", "Enter names with ',' separator : ", "Name 1, Name 2, ...", null, true);
 

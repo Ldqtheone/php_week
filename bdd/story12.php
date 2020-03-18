@@ -34,12 +34,12 @@
             isset($_POST['address']))
         {
             $user_data = array(
-                'firstname' => $_POST['prenom'],
-                'lastname' => $_POST['nom'],
-                'birthdate' => $_POST['birthday'],
-                'mail' => $_POST['email'],
-                'address' => $_POST['address'],
-                'gender' => $_POST['sex']
+                'firstName' => $_POST['contactFirstName'],
+                'name' => $_POST['contactName'],
+                'birthday' => $_POST['contactBirthday'],
+                'email' => $_POST['contactEmail'],
+                'address' => $_POST['contactAddress'],
+                'gender' => $_POST['contactGender']
             );
 
             $database->insertInto('contacts', $user_data);

@@ -2,9 +2,6 @@
 <div class="story">
     <h3>Past Event :</h3>
     <form id="formStory4" method="POST" action="#">
-        <!--<label for="time">Time in seconds : </label>
-        <input type="number" name="time" placeholder="Seconds">
-        <input type="submit" name="submitStory4" value="Send">-->
         <?php
             $tools->createInput("number", "time", "Time in seconds : ", "Seconds", null, true);
             $tools->createInput("submit", "submitStory4", null, null, "Send");

@@ -33,6 +33,11 @@ class Tools
         echo '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"'. $value . $placeholder . $required . $checked . '>';
     }
 
+    /**
+     * @param string $name
+     * @param array $options
+     * @param string $label
+     */
     public function createSelect($name, $options, $label)
     {
         echo '<label for= "' . $name . '">' . $label . '</label>';
@@ -45,7 +50,11 @@ class Tools
         echo '</select>';
     }
 
-
+    /**
+     * @param string $name
+     * @param array $options
+     * @param null $text
+     */
     public function createRadio($name, $options, $text=null)
     {
         if ($text !== null)
@@ -59,6 +68,13 @@ class Tools
         }
     }
 
+    /**
+     * @param string $name
+     * @param int $row
+     * @param int $cols
+     * @param string $placeholder
+     * @param bool $isRequired
+     */
     public function createTextArea($name, $row, $cols, $placeholder, $isRequired = false)
     {
         $required = $isRequired ? " required " : "";
