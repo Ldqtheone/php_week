@@ -11,22 +11,21 @@
         <?php include '../header.php' ?>
         <?php require 'Tyrex.php' ?>
         <?php require 'Triceratops.php' ?>
+        <?php require '../Tools.php' ?>
         <main>
             <h2>Créer ton dino !</h2>
-            <form id="formDino" method="POST" action="#" id="formDino">
+            <form id="formDino" method="POST" action="#">
                 <?php
-                require '../Tools.php';
                 $tools = new Tools();
 
                 echo "<div>";
-                $tools->createInput("number", "lifeDino", null, "Point of life : ");
+                $tools->createInput("number", "lifeDino", "Point of life : ", "HP", null, true );
                 echo "</div>";
                 echo "<div>";
-                $tools->createInput("number", "damageDino", null, "Damage : ");
+                $tools->createInput("number", "damageDino", "Damage : ", "Damage", null, true );
                 echo "</div>";
 
                 echo "<div>";
-
                 $tools->createRadio(["Male", "Female"], "Sex : ", "sexDino");
                 echo "</div>";
 
@@ -39,7 +38,7 @@
                 echo "</div>";
 
                 echo "<div>";
-                $tools->createInput("submit", "submitDino", "Create my dino", null);
+                $tools->createInput("submit", "submitDino", "Create my dino", null, "Create" );
                 echo "</div>";
 
                 ?>

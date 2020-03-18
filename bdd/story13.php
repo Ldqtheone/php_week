@@ -29,7 +29,7 @@
                 <?php
                 $contacts = $database->selectAll('contacts');
                 foreach ($contacts as $key => $contact) { ?>
-                    <tr class="constactLine" <?php (string)($key % 2) ?>>
+                    <tr class="contactLine" <?php (string)($key % 2) ?>>
                         <td><?= $contact['firstname']; ?></td>
                         <td><?= $contact['lastname']; ?></td>
                         <td><?= $contact['mail']; ?></td>

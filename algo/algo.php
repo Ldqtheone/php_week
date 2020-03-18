@@ -1,6 +1,9 @@
 <?php
     require 'Algorithmie.php';
+    require '../Tools.php';
+
     $algorithmie = new Algorithmie();
+    $tools = new Tools();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

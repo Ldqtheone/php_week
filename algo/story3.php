@@ -2,9 +2,13 @@
 <div class="story">
     <h3>Primary Number :</h3>
     <form id="formStory3" method="POST" action="#">
-        <label for="primaryNumber">Enter a number :</label>
+        <!--<label for="primaryNumber">Enter a number :</label>
         <input type="number" name="primaryNumber" placeholder="Number">
-        <input type="submit" name="submitStory3" value="Send">
+        <input type="submit" name="submitStory3" value="Send">-->
+        <?php
+            $tools->createInput("number", "primaryNumber", "Enter a number : ", "Number", null, true);
+            $tools->createInput("submit", "submitStory3", null, null, "Send");
+        ?>
     </form>
     <p>
         <?php

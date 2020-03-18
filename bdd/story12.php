@@ -5,33 +5,28 @@
         <div class="contactContent">
             <?php
 
-                echo "<br/>";
-                $tools->createInput("text", "nom", null, "Votre nom :", true);
-                echo "<br/>";
-
-                echo "<br/>";
-                $tools->createInput("text", "prenom", null, "Votre prenom: ", true);
+                $tools->createInput("text", "contactFirstName", "Enter your first name : ", "First Name", null, true);
                 echo "<br/>";
 
-                echo "<br/>";
-                $tools->createInput("date", "birthday", null, "Votre date de naissance : ", true);
-                echo "<br/>";
-
-                echo "<br/>";
-                $tools->createInput("email", "email", null, "Votre Email : ", true);
+                $tools->createInput("text", "contactName", "Enter your name : ", "Name", null, true);
                 echo "<br/>";
 
-                echo "<br/>";
-                $tools->createInput("text", "address", null, "Votre addresse : ", true);
+                $tools->createInput("date", "contactBirthday", "Enter your birthday : ", "Birthday", null, true);
+
+                $tools->createInput("email", "contactEmail", "Enter your email : ", "Email", null, true);
                 echo "<br/>";
 
-                $tools->createRadio(["Homme", "Femme"], "Sexe : ", "sex");
+                $tools->createInput("text", "contactAddress", "Enter your address : ", "Address", null, true);
+                echo "<br/>";
+
+                $tools->createRadio(["Man", "Woman"], "Gender : ", "contactGender");
                 echo "<br/>";
 
                 echo '<div id = "wrapButton">';
-                $tools->createInput("submit", "submitContact", "Envoyer", null, true);
+                    $tools->createInput("submit", "submitContact", null, null, "Send", true);
                 echo '</div>';
-        ?>
+            ?>
+        </div>
     </form>
 
     <?php
