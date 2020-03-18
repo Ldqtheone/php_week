@@ -140,7 +140,19 @@ table {
     color: cadetblue;
 }
 
-/* Auther css */
+/* DataBase css */
+
+.contactLine0 {
+    background: #FFFFFF;
+    border-radius: 1px 1px 1px;
+}
+
+.contactLine1 {
+    background: #B8F2FF;
+    border-radius: 1px 1px 1px;
+}
+
+/* Other css */
 
 body{
     margin: 0px;
