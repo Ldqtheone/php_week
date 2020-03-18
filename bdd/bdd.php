@@ -1,3 +1,7 @@
+<?php
+    require 'Database.php';
+    $database = new Database("php_week");
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>

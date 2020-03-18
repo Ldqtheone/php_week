@@ -15,9 +15,8 @@
             <h2>Créer ton dino !</h2>
             <form id="formDino" method="POST" action="#" id="formDino">
                 <?php
-                require 'Tools.php';
+                require '../Tools.php';
                 $tools = new Tools();
-
 
                 echo "<div>";
                 $tools->createInput("number", "lifeDino", null, "Point of life : ");
@@ -27,8 +26,7 @@
                 echo "</div>";
 
                 echo "<div>";
-                //$tools->createRadio("sexDino", true, "Male");
-                //$tools->createRadio("sexDino", false, "Female");
+
                 $tools->createRadio(["Male", "Female"], "Sex : ", "sexDino");
                 echo "</div>";
 
@@ -37,13 +35,11 @@
                 echo "</div>";
 
                 echo "<div>";
-                //$tools->CreateTextArea("textAreaDino", "Resume story : ");
                 $tools->createTextArea("textAreaDino", 15, 45, "Resume story : ");
                 echo "</div>";
 
                 echo "<div>";
-                $tools->createInput("submit", "submitDino", "Create_Dino", null);
-                //$tools->CreateInputSubmit("validDino", "Create my dino");
+                $tools->createInput("submit", "submitDino", "Create my dino", null);
                 echo "</div>";
 
                 ?>
