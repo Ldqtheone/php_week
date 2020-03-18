@@ -26,7 +26,7 @@
                 echo "</div>";
 
                 echo "<div>";
-                $tools->createRadio(["Male", "Female"], "Sex : ", "sexDino");
+                $tools->createRadio("genderDino", ["Male", "Female"], "Gender : ");
                 echo "</div>";
 
                 echo "<div>";
@@ -54,10 +54,10 @@
                     switch ($_POST["typeDino"])
                     {
                         case "Tyrex":
-                            $myDino = new Tyrex($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"] === "Male");
+                            $myDino = new Tyrex($_POST["lifeDino"], $_POST["damageDino"], $_POST["genderDino"] === "Male");
                             break;
                         case "Triceratops":
-                            $myDino = new Triceratops($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"] === "Male");
+                            $myDino = new Triceratops($_POST["lifeDino"], $_POST["damageDino"], $_POST["genderDino"] === "Male");
                             break;
                         default:
                             echo "Dino Inconnu : " . $_POST["typeDino"];

@@ -1,5 +1,5 @@
 <div class="story">
-    <form method="POST" id="formContact" action="">
+    <form method="POST" id="formContact" action="#">
         <h2 id="titleContact">Vos coordonnées :</h2>
 
         <div class="contactContent">
@@ -19,7 +19,7 @@
                 $tools->createInput("text", "contactAddress", "Enter your address : ", "Address", null, true);
                 echo "<br/>";
 
-                $tools->createRadio(["Man", "Woman"], "Gender : ", "contactGender");
+                $tools->createRadio("contactGender", ["Man", "Woman"], "Gender : ");
                 echo "<br/>";
 
                 echo '<div id = "wrapButton">';

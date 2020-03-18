@@ -1,12 +1,25 @@
 <?php
 
-
+/**
+ * Class Tools
+ */
 class Tools
 {
-
+    /**
+     * Tools constructor.
+     */
     public function __construct()
     { }
 
+    /**
+     * @param string $type type of input
+     * @param string $name name of input
+     * @param null $label optional : if the input has a label
+     * @param null $placeholder optional : if the input has a placeholder
+     * @param null $value optional : if the input has a value
+     * @param bool $isRequired optional : if the input is required
+     * @param bool $isChecked optional : if the input is checked
+     */
     public function createInput($type, $name, $label=null, $placeholder=null, $value=null, $isRequired=false, $isChecked=false){
         if ($label !== null)
         {
@@ -33,12 +46,16 @@ class Tools
     }
 
 
-    public function createRadio($options, $label, $name)
+    public function createRadio($name, $options, $text=null)
     {
-        echo '<label for= "' . $name . '">' . $label . '</label>';
+        if ($text !== null)
+        {
+            echo '<label>' . $text . '</label>';
+        }
+
         foreach($options as $key => $value)
         {
-            echo '<input type = "radio" name = "' . $name . '" value=' . $value . '>' .  $value;
+            $this->createInput("radio", $name, $value, null, $value, true, $key === 0);
         }
     }
 
