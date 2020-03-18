@@ -47,24 +47,6 @@ footer div{
     margin: 0;
 }
 
-table {
-    text-align: center;
-    width: 100%;
-}
-    tr:nth-child(even) {
-        background: white;
-    }
-    tr:nth-child(odd) {
-        background: lightblue;
-    }
-
-    thead tr{
-        background: lightslategrey !important;
-    }
-
-        thead tr th{
-         padding-bottom: 50px;
-        }
 
 #footerBandeRed{
     height: 60px;
@@ -92,6 +74,7 @@ table {
     color:#DDDDDD;
     transition-duration: 0.5s;
 }
+
 #logofb:hover, #logoinsta:hover, #logolinkedin:hover, #logotwitter:hover, #logoyt:hover{
     transition-duration: 0.5s;
     color:rgb(6, 206, 169);
@@ -138,6 +121,52 @@ table {
 
 #myDinoDiv p {
     color: cadetblue;
+}
+
+
+/* BDD css */
+
+.contactLink{
+    text-decoration: none;
+    font-style: oblique;
+    color: rgb(206, 6, 43);
+    text-shadow: 2px 2px 4px black;
+    transition-duration: 0.5s;
+}
+
+.contactLink:hover{
+    color: rgb(255, 183, 52);
+    transition-duration: 0.5s;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+thead tr{
+    background: lightslategrey !important;
+}
+
+thead tr th{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+tr:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+tr:nth-child(even):hover {
+    background: rgb(216, 242, 255);
+}
+
+tr:nth-child(odd) {
+    background: rgb(173, 216, 230);
+}
+
+tr:nth-child(odd):hover {
+    background: rgb(173, 216, 255);
 }
 
 /* Other css */

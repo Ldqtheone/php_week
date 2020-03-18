@@ -20,11 +20,11 @@
             </div>
             <div class="nbDone">
                 <h2> Number Done : </h2>
-                <p>13</p>
+                <p>15</p>
             </div>
             <div class="nbUndone">
                 <h2>Number Undone :</h2>
-                <p>3</p>
+                <p>1</p>
             </div>
             <div class="storyDone">
                 <h2> Stories Done : </h2>
@@ -41,6 +41,8 @@
                 <p> Story 11 </p>
                 <p> Story 12 </p>
                 <p> Story 13 </p>
+                <p> Story 14 </p>
+                <p> Story 15 </p>
             </div>
         </main>
     <?php  include 'footer.php' ?>

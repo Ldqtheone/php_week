@@ -16,7 +16,9 @@
         <?php include '../header.php' ?>
         <main>
             <h3>Accès aux contacts :</h3>
-            <a href="story13.php">Voir mes contacts</a>
+            <a href="contacts.php" class="contactLink" >Voir mes contacts</a>
+            <br/>
+
             <?php include 'story12.php' ?>
             <br/>
             <?php include 'story14.php' ?>
