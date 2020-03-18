@@ -10,22 +10,24 @@
     <?php include 'header.php' ?>
         <main>
             <div class="container">
-                <H1>Liste des membres du groupe :</H1>
-                <p>- Antony Correia</p>
-                <p>- Brian Lecarpentier</p>
-                <p>- Roman Clavier</p>
-                <p>- Corentin Vallois</p>
+                <h1>Liste des membres du groupe :</h1>
+                <ul>
+                    <li>Antony Correia</li>
+                    <li>Brian Lecarpentier</li>
+                    <li>Roman Clavier</li>
+                    <li>Corentin Vallois</li>
+                </ul>
             </div>
             <div class="nbDone">
-                <H2> Number Done : </H2>
-                <p>11</p>
+                <h2> Number Done : </h2>
+                <p>13</p>
             </div>
             <div class="nbUndone">
                 <h2>Number Undone :</h2>
-                <p>5</p>
+                <p>3</p>
             </div>
             <div class="storyDone">
-                <H2> Stories Done : </H2>
+                <h2> Stories Done : </h2>
                 <p> Story 1 </p>
                 <p> Story 2 </p>
                 <p> Story 3 </p>
@@ -37,6 +39,8 @@
                 <p> Story 9 </p>
                 <p> Story 10 </p>
                 <p> Story 11 </p>
+                <p> Story 12 </p>
+                <p> Story 13 </p>
             </div>
         </main>
     <?php  include 'footer.php' ?>

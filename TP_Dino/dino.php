@@ -13,52 +13,65 @@
         <?php require 'Triceratops.php' ?>
         <main>
             <h2>Créer ton dino !</h2>
-            <form method="POST" action="#" id="formDino">
+            <form id="formDino" method="POST" action="#" id="formDino">
                 <?php
                 require 'Tools.php';
                 $tools = new Tools();
 
+
                 echo "<div>";
-                $tools->CreateInput("number", "lifeDino", "Point of life : ", "PH");
+                $tools->createInput("number", "lifeDino", null, "Point of life : ");
                 echo "</div>";
                 echo "<div>";
-                $tools->CreateInput("number", "damageDino", "Damage : ", "PA");
+                $tools->createInput("number", "damageDino", null, "Damage : ");
                 echo "</div>";
 
                 echo "<div>";
-                $tools->CreateInputRadio("sexDino", true, "Male");
-                $tools->CreateInputRadio("sexDino", false, "Female");
+                //$tools->createRadio("sexDino", true, "Male");
+                //$tools->createRadio("sexDino", false, "Female");
+                $tools->createRadio(["Male", "Female"], "Sex : ", "sexDino");
                 echo "</div>";
 
                 echo "<div>";
-                $tools->CreateSelect("typeDino", ["Tyrex", "Triceratops"]);
+                $tools->createSelect("typeDino", ["Tyrex", "Triceratops"], "Race : ");
                 echo "</div>";
 
                 echo "<div>";
-                $tools->CreateTextArea("textAreaDino", "Resume story : ");
+                //$tools->CreateTextArea("textAreaDino", "Resume story : ");
+                $tools->createTextArea("textAreaDino", 15, 45, "Resume story : ");
                 echo "</div>";
 
                 echo "<div>";
-                $tools->CreateInputSubmit("validDino", "Create my dino");
+                $tools->createInput("submit", "submitDino", "Create_Dino", null);
+                //$tools->CreateInputSubmit("validDino", "Create my dino");
                 echo "</div>";
 
-                if (!empty($_POST))
-                {
-                    echo '<div id="myDinoDiv"><p>';
+                ?>
+            </form>
+
+            <?php
+            if (isset($_POST["submitDino"]))
+            {
+                echo "<h2>Mon dino !</h2>";
+
+                echo '<div id="myDinoDiv"><p>';
                     $myDino = null;
                     switch ($_POST["typeDino"])
                     {
                         case "Tyrex":
-                            $myDino = new Tyrex($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"]);
+                            $myDino = new Tyrex($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"] === "Male");
                             break;
                         case "Triceratops":
-                            $myDino = new Triceratops($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"]);
+                            $myDino = new Triceratops($_POST["lifeDino"], $_POST["damageDino"], $_POST["sexDino"] === "Male");
+                            break;
+                        default:
+                            echo "Dino Inconnu : " . $_POST["typeDino"];
                             break;
                     }
                     echo '</p></div>';
-                }
-                ?>
-            </form>
+            }
+            ?>
+
             <h2>Combat de dino !</h2>
 
             <?php
