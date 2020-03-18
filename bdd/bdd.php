@@ -1,6 +1,8 @@
 <?php
     require 'Database.php';
+    require '../Tools.php';
     $database = new Database("php_week");
+    $tools = new Tools();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
