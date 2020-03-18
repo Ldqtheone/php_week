@@ -1,6 +1,6 @@
 <div class="story">
     <form method="POST" id="formContact" action="#">
-        <h2 id="titleContact">Vos coordonnées :</h2>
+        <h2 id="titleContact">Story 12 : Vos coordonnées :</h2>
 
         <div class="contactContent">
             <?php
@@ -30,8 +30,7 @@
     </form>
 
     <?php
-        if(isset($_POST['contactFirstName']) && isset($_POST['contactName']) && isset($_POST['contactEmail']) && isset($_POST['contactBirthday']) &&
-            isset($_POST['contactAddress']))
+        if(isset($_POST['submitContact']))
         {
             $user_data = array(
                 'firstname' => $_POST['contactFirstName'],
