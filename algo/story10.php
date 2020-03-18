@@ -4,6 +4,7 @@
     <form id="formStory10" method="POST" action="">
         <?php
             $tools->createInput("email", "email", "Enter your email : ", "email", null, true);
+
             $tools->createInput("date", "birthDate", "Enter your birth date : ", null, null, true);
 
             $tools->createInput("submit", "submitStory10", null, null, "Send");
