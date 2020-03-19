@@ -3,6 +3,8 @@
 header{
     display: flex;
     flex-direction: column;
+    width: 100%;
+
 }
 
 nav{
@@ -11,6 +13,7 @@ nav{
     background-color: rgb(206, 6, 43);
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 nav ul{
@@ -44,12 +47,14 @@ nav ul li a:hover{
 /* Footer css */
 
 footer{
-    bottom: 0;
+
     width: 100%;
+    position: absolute;
 }
 
 footer div{
     margin: 0;
+    width: 100%;
 }
 
 #footerBandeRed{
@@ -331,9 +336,14 @@ label {
 }
 
 .container-letter{
+    width: 400px;
+    height: 750px;
+}
+
+.letter{
     display: block;
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 750px;
     border: 5px solid black;
     padding: 10px;
 }

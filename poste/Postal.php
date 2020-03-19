@@ -76,6 +76,7 @@ class Postal
     public function displayLetter()
     {
         echo '<div class="container-letter" >';
+        echo '<div class="letter" >';
         echo '<div class="content-letter-expediteur" >';
         echo '<p>'. $this->exp .'</p>';
         echo '<p>'. $this->expLoc .'</p>';
@@ -87,6 +88,7 @@ class Postal
         echo '<p>'. $this->destCity . ', ' . $this->destPostal.'</p>';
         echo '</div>';
         echo '<p class="content-letter">'. nl2br($this->getContentLetter()) .'</p>';
+        echo '</div>';
         echo '</div>';
     }
 
