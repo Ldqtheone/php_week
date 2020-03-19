@@ -42,7 +42,7 @@ class Database
     }
 
     /**
-     * Function to run to connect the bdd
+     * Function to set BDD
      */
     private function connexion() : void
     {

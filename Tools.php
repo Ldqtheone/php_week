@@ -12,6 +12,7 @@ class Tools
     { }
 
     /**
+     * Function to create HTML Input
      * @param string $type type of input
      * @param string $name name of input
      * @param null $label optional : if the input has a label
@@ -35,6 +36,7 @@ class Tools
     }
 
     /**
+     * Function to create HTML Select
      * @param string $name
      * @param array $options
      * @param string $label
@@ -52,6 +54,7 @@ class Tools
     }
 
     /**
+     * Function to create HTML Radio
      * @param string $name
      * @param array $options
      * @param null $text
@@ -69,6 +72,7 @@ class Tools
     }
 
     /**
+     * Function to create HTML TextArea
      * @param string $name
      * @param int $row
      * @param int $cols
