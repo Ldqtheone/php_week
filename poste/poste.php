@@ -15,7 +15,31 @@ $tools = new Tools();
     <body>
     <?php include '../header.php' ?>
     <main>
-        <?php include 'story15.php' ?>
+        <div class="container-poste">
+            <div class="container-coordonnee">
+                <?php include 'story15.php' ?>
+            </div>
+            <div class="container-enveloppe">
+                <div class="enveloppe-recto">
+                    <div class="stamp"></div>
+                    <span class="confidential" >Confidentiel</span>
+                    <div class="container-destinataire">
+                        <p>Nom Prenom</p>
+                        <p>Adresse </p>
+                    </div>
+
+                </div>
+                <div class="enveloppe-verso">
+                    <div class="enveloppe-tri">
+                    <div class="container-expediteur">
+                        <p>Nom Prenom</p>
+                        <p>Adresse </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
     <?php include '../footer.php' ?>
     </body>
