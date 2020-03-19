@@ -13,6 +13,8 @@
             <th> Adresse </th>
             <th> Sexe </th>
             <th> Naissance </th>
+            <th> Ville </th>
+            <th> Code postal </th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +29,8 @@
                 <td><?= $contact['address']; ?></td>
                 <td><?= $contact['gender']; ?></td>
                 <td><?= $contact['birthdate']; ?></td>
+                <td><?= $contact['city']; ?></td>
+                <td><?= $contact['postal']; ?></td>
             </tr>
         <?php } ?>
     </tbody>

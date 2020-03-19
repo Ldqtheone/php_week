@@ -5,43 +5,50 @@
         <div class="contactContent">
             <?php
 
-                $tools->createInput("text", "contactFirstName", "Enter your first name : ", "First Name", null, true);
-                echo "<br/>";
+            $tools->createInput("text", "contactFirstName", "Enter your first name : ", "First Name", null, true);
+            echo "<br/>";
 
-                $tools->createInput("text", "contactName", "Enter your name : ", "Name", null, true);
-                echo "<br/>";
+            $tools->createInput("text", "contactName", "Enter your name : ", "Name", null, true);
+            echo "<br/>";
 
-                $tools->createInput("date", "contactBirthday", "Enter your birthday : ", "Birthday", null, true);
+            $tools->createInput("date", "contactBirthday", "Enter your birthday : ", "Birthday", null, true);
 
-                $tools->createInput("email", "contactEmail", "Enter your email : ", "Email", null, true);
-                echo "<br/>";
+            $tools->createInput("email", "contactEmail", "Enter your email : ", "Email", null, true);
+            echo "<br/>";
 
-                $tools->createInput("text", "contactAddress", "Enter your address : ", "Address", null, true);
-                echo "<br/>";
+            $tools->createInput("text", "contactAddress", "Enter your address : ", "Address", null, true);
+            echo "<br/>";
 
-                $tools->createRadio("contactGender", ["Man", "Woman"], "Gender : ");
-                echo "<br/>";
+            $tools->createInput("text", "contactCity", "Enter your city : ", "City", null, true);
+            echo "<br/>";
 
-                echo '<div id = "wrapButton">';
-                    $tools->createInput("submit", "submitContact", null, null, "Send", true);
-                echo '</div>';
+            $tools->createInput("text", "contactPostal", "Enter your postal : ", "Postal", null, true);
+            echo "<br/>";
+
+            $tools->createRadio("contactGender", ["Man", "Woman"], "Gender : ");
+            echo "<br/>";
+
+            echo '<div id = "wrapButton">';
+            $tools->createInput("submit", "submitContact", null, null, "Send", true);
+            echo '</div>';
             ?>
         </div>
     </form>
 
     <?php
-        if(isset($_POST['submitContact']))
-        {
-            $user_data = array(
-                'firstname' => $_POST['contactFirstName'],
-                'lastname' => $_POST['contactName'],
-                'birthdate' => $_POST['contactBirthday'],
-                'mail' => $_POST['contactEmail'],
-                'address' => $_POST['contactAddress'],
-                'gender' => $_POST['contactGender']
-            );
+    if (isset($_POST['submitContact'])) {
+        $user_data = array(
+            'firstname' => $_POST['contactFirstName'],
+            'lastname' => $_POST['contactName'],
+            'birthdate' => $_POST['contactBirthday'],
+            'mail' => $_POST['contactEmail'],
+            'address' => $_POST['contactAddress'],
+            'gender' => $_POST['contactGender'],
+            'city'=>$_POST['contactCity'],
+            'postal'=>$_POST['contactPostal']
+        );
 
-            $database->insertInto('contacts', $user_data);
-        }
+        $database->insertInto('contacts', $user_data);
+    }
     ?>
 </div>

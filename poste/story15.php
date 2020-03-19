@@ -17,11 +17,18 @@
 
                 $tools->createInput("checkbox", "prio", "Timbre prioritaire");
                 $tools->createInput("checkbox", "confidential", "Confidentiel");
-                $tools->createInput("submit", "submitLetter", null, null, "Send", true);
+
             }
             else{
                 echo "Aucun contact disponible dans la base de données";
             }
+            ?>
+        </div>
+        <h2>Votre lettre :</h2>
+        <div class="contactContent">
+            <?php
+            $tools->createTextArea("letter", 15, 45, "Votre lettre ici", true);
+            $tools->createInput("submit", "submitLetter", null, null, "Send", true);
             ?>
         </div>
     </form>
@@ -31,18 +38,19 @@
         if($_POST['dest']===$_POST['exp']){
             echo"<script>alert('Le destinataire doit être different de l\'expéditeur')</script>";
         }else{
-            $destInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['dest']));
-            $expInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['exp']));
+            $destInfos = $database->selectSpecific(['firstname, lastname, address,city ,postal'], "contacts", array( 'id' =>  $_POST['dest']));
+            $expInfos = $database->selectSpecific(['firstname, lastname, address,city ,postal'], "contacts", array( 'id' =>  $_POST['exp']));
             
-            $envelope = new Envelope(
+            $envelope = new Postal(
                 "" . $destInfos['lastname'] ." " . $destInfos['firstname'],
-                $destInfos['address'],
+                $destInfos['address'], $destInfos['city'], $destInfos['postal'],
                 "" . $expInfos['lastname'] ." " . $expInfos['firstname'],
-                $expInfos['address'],
+                $expInfos['address'], $expInfos['city'], $expInfos['postal'],
                 isset($_POST['prio']) ? $_POST['prio'] = true : $_POST['prio'] = false,
                 isset($_POST['confidential']) ? $_POST['confidential'] = true :
                     $_POST['confidential'] = false
         );
+            $envelope->setContentLetter($_POST['letter']);
         }
     }
     ?>
