@@ -42,6 +42,12 @@
         $tools->createInput("text", "updateAddress", "Enter your address : ", "Address", $toUpdate['address'], true);
         echo "<br/>";
 
+        $tools->createInput("text", "updateCity", "Enter your City : ", "City", $toUpdate['city'], true);
+        echo "<br/>";
+
+        $tools->createInput("text", "updatePostal", "Enter your Postal code : ", "Postal", $toUpdate['postal'], true);
+        echo "<br/>";
+
         echo '<div id = "wrapButton">';
         $tools->createInput("submit", "editContact", null, null, "Send", true);
         echo '</div>';
@@ -56,7 +62,9 @@
                 'lastname' => $_POST['updateLastName'],
                 'birthdate' => $_POST['updateBirthdate'],
                 'mail' => $_POST['updateEmail'],
-                'address' => $_POST['updateAddress']
+                'address' => $_POST['updateAddress'],
+                'city'=>$_POST['updateCity'],
+                'postal'=>$_POST['updatePostal']
             );
             $update_where = array( 'id' => $_POST['updateId']);
 

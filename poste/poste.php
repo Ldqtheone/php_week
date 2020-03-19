@@ -1,10 +1,10 @@
 <?php
 require '../bdd/Database.php';
 require '../Tools.php';
-require 'Envelope.php';
+require 'Postal.php';
 $database = new Database("php_week");
 $tools = new Tools();
-$envelope = new Envelope();
+$envelope = new Postal();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,8 +22,8 @@ $envelope = new Envelope();
                 <?php include 'story15.php' ?>
             </div>
             <?php $envelope->displayEnvelope();?>
+            <?php $envelope->displayLetter();?>
         </div>
-
     </main>
     <?php include '../footer.php' ?>
     </body>

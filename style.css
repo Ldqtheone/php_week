@@ -6,7 +6,7 @@ header{
 }
 
 nav{
-    margin: 0px;
+    margin: 0;
     padding: 0 10%;
     background-color: rgb(206, 6, 43);
     display: flex;
@@ -14,8 +14,8 @@ nav{
 }
 
 nav ul{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
 }
@@ -44,7 +44,7 @@ nav ul li a:hover{
 /* Footer css */
 
 footer{
-    bottom: 0%;
+    bottom: 0;
     width: 100%;
 }
 
@@ -54,14 +54,14 @@ footer div{
 
 #footerBandeRed{
     height: 60px;
-    padding: 20px 0px;
+    padding: 20px 0;
     margin: 50px 0 0 0;
     background-color: rgb(206, 6, 43);
 }
 
 #footerBandeRed ul{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -93,7 +93,7 @@ footer div{
 
 #copyright p{
     font-family: 'Courier New', Courier, monospace;
-    margin: 0px;
+    margin: 0;
 }
 
 #copyright a{
@@ -104,7 +104,7 @@ footer div{
 /* Dino css */
 
 .dinoLog{
-    margin: 0px;
+    margin: 0;
     font-style: italic;
 }
 
@@ -174,7 +174,7 @@ tr:nth-child(odd):hover {
 /* Other css */
 
 body{
-    margin: 0px;
+    margin: 0;
 }
 
 main{
@@ -279,7 +279,7 @@ label {
     padding: 0.25rem 1rem;
     text-transform: uppercase;
     border-radius: 1rem;
-    font-family: 'Courier';
+    font-family: 'Courier', serif;
     -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
     -webkit-mask-size: 944px 604px;
     mix-blend-mode: multiply;
@@ -291,8 +291,8 @@ label {
     position: absolute;
     right: 10px;
     margin: 10px;
-    height: 80px;
-    width: 50px;
+    height: 8em;
+    width: 5em;
     background-image: url('assets/images/stampRed.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -302,8 +302,8 @@ label {
     position: absolute;
     right: 10px;
     margin: 10px;
-    height: 80px;
-    width: 50px;
+    height: 8em;
+    width: 5em;
     background-image: url('assets/images/stampGreen.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -313,17 +313,46 @@ label {
 
 .container-destinataire{
     position: absolute;
+    font-size: 0.8em;
     right: 10%;
     bottom: 10%;
 }
 
 .container-expediteur{
     width: 100%;
+    font-size: 0.8em;
     position: absolute;
-    top: 10%;
+    top: 0;
     text-align: center;
 }
 
 .container-coordonnee{
     margin: 20px;
+}
+
+.container-letter{
+    display: block;
+    width: 500px;
+    height: 600px;
+    border: 5px solid black;
+}
+
+
+.content-letter-expediteur{
+    position: relative;
+    width: 100%;
+    height: 15%;
+}
+
+.content-letter-destinataire{
+    position: relative;
+    width: 100%;
+    height: 15%;
+    text-align: right;
+}
+
+.content-letter{
+    position: relative;
+    width: 100%;
+    height: 70%;
 }
