@@ -287,13 +287,24 @@ label {
 
 }
 
-.stamp{
+.stampRed{
     position: absolute;
     right: 10px;
     margin: 10px;
     height: 80px;
     width: 50px;
-    background-image: url('https://pngimg.com/uploads/postage_stamp/postage_stamp_PNG25.png');
+    background-image: url('assets/images/stampRed.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.stampGreen{
+    position: absolute;
+    right: 10px;
+    margin: 10px;
+    height: 80px;
+    width: 50px;
+    background-image: url('assets/images/stampGreen.png');
     background-repeat: no-repeat;
     background-size: contain;
 

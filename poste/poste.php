@@ -1,8 +1,10 @@
 <?php
 require '../bdd/Database.php';
 require '../Tools.php';
+require 'Envelope.php';
 $database = new Database("php_week");
 $tools = new Tools();
+$envelope = new Envelope();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,25 +21,7 @@ $tools = new Tools();
             <div class="container-coordonnee">
                 <?php include 'story15.php' ?>
             </div>
-            <div class="container-enveloppe">
-                <div class="enveloppe-recto">
-                    <div class="stamp"></div>
-                    <span class="confidential" >Confidentiel</span>
-                    <div class="container-destinataire">
-                        <p>Nom Prenom</p>
-                        <p>Adresse </p>
-                    </div>
-
-                </div>
-                <div class="enveloppe-verso">
-                    <div class="enveloppe-tri">
-                    <div class="container-expediteur">
-                        <p>Nom Prenom</p>
-                        <p>Adresse </p>
-                    </div>
-                    </div>
-                </div>
-            </div>
+            <?php $envelope->displayEnvelope();?>
         </div>
 
     </main>
