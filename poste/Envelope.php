@@ -27,9 +27,8 @@ class Envelope
         $this->destLoc = $destLoc;
         $this->exp = $exp;
         $this->expLoc = $expLoc;
-
-        $isImportant === null ? $this->isImportant = false : $this->isImportant = true;
-        $isConfidential === null ? $this->isConfidential = false : $this->isConfidential = true;
+        $this->isImportant = $isImportant;
+        $this->isConfidential = $isConfidential;
     }
 
     public function displayEnvelope()

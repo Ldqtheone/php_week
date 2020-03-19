@@ -29,18 +29,16 @@
         }else{
             $destInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['dest']));
             $expInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['exp']));
-
-            var_dump($_POST['prio']);
-            var_dump($_POST['confidential']);
-
+            
             $envelope = new Envelope(
                 "" . $destInfos['lastname'] ." " . $destInfos['firstname'],
                 $destInfos['address'],
                 "" . $expInfos['lastname'] ." " . $expInfos['firstname'],
                 $expInfos['address'],
-                $_POST['prio'],
-                $_POST['confidential']
-            );
+                isset($_POST['prio']) ? $_POST['prio'] = true : $_POST['prio'] = false,
+                isset($_POST['confidential']) ? $_POST['confidential'] = true :
+                    $_POST['confidential'] = false
+        );
         }
     }
     ?>
