@@ -86,7 +86,7 @@ class Postal
         echo '<p>'. $this->destLoc .'</p>';
         echo '<p>'. $this->destCity . ', ' . $this->destPostal.'</p>';
         echo '</div>';
-        echo '<p class="content-letter">'. $this->getContentLetter() .'</p>';
+        echo '<p class="content-letter">'. nl2br($this->getContentLetter()) .'</p>';
         echo '</div>';
     }
 
