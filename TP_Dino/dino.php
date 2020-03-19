@@ -30,7 +30,7 @@
                 echo "</div>";
 
                 echo "<div>";
-                $tools->createSelect("typeDino", ["Tyrex", "Triceratops"], "Race : ");
+                $tools->createSelect("typeDino", [1 => "Tyrex", 2 => "Triceratops"], "Race : ");
                 echo "</div>";
 
                 echo "<div>";
@@ -53,10 +53,10 @@
                     $myDino = null;
                     switch ($_POST["typeDino"])
                     {
-                        case "Tyrex":
+                        case 1:
                             $myDino = new Tyrex($_POST["lifeDino"], $_POST["damageDino"], $_POST["genderDino"] === "Male");
                             break;
-                        case "Triceratops":
+                        case 2:
                             $myDino = new Triceratops($_POST["lifeDino"], $_POST["damageDino"], $_POST["genderDino"] === "Male");
                             break;
                         default:
