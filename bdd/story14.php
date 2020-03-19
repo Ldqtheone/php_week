@@ -4,12 +4,17 @@
         $contacts = $database->selectAll('contacts');
     ?>
     <form action="" method="post">
-        <select name="contactSelect">
-            <?php foreach ($contacts as $key => $contact){ ?>
-            <option value="<?= $contact['id']?>"><?= $contact['firstname'] ;}?></option>
-        </select>
         <?php
-            $tools->createInput("submit", "checkContact");
+            if(!empty($contacts)) {
+                foreach ($contacts as $key => $contact) {
+                    $contactName[$contact['id']] = $contact['firstname'];
+                }
+                $tools->createSelect("contactSelect", $contactName, "Editer quel contact ? ");
+                $tools->createInput("submit", "checkContact");
+            }
+            else{
+                echo "Aucun contact présent dans la base de données";
+            }
         ?>
     </form>
     <?php

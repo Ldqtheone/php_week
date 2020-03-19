@@ -5,19 +5,23 @@
         <div class="contactContent">
             <?php
             $contacts = $database->selectAll('contacts');
-            $nameDest = array();
-            foreach ($contacts as $key => $contact) {
-                $nameDest[$contact['id']] =  $contact['firstname'] . ' ' . $contact['lastname'];
+            if(!empty($contacts)) {
+                foreach ($contacts as $key => $contact) {
+                    $nameDest[$contact['id']] = $contact['firstname'] . ' ' . $contact['lastname'];
+                }
+                $tools->createSelect("dest", $nameDest, "Choisissez le nom de votre destinataire ");
+                echo "<br/>";
+
+                $tools->createSelect("exp", $nameDest, "Choisissez le nom de votre expediteur ");
+                echo "<br/>";
+
+                $tools->createInput("checkbox", "prio", "Timbre prioritaire");
+                $tools->createInput("checkbox", "confidential", "Confidentiel");
+                $tools->createInput("submit", "submitLetter", null, null, "Send", true);
             }
-            $tools->createSelect("dest", $nameDest, "Choisissez le nom de votre destinataire ");
-            echo "<br/>";
-
-            $tools->createSelect("exp", $nameDest, "Choisissez le nom de votre expediteur ");
-            echo "<br/>";
-
-            $tools->createInput("checkbox", "prio", "Timbre prioritaire");
-            $tools->createInput("checkbox", "confidential", "Confidentiel");
-            $tools->createInput("submit", "submitLetter", null, null, "Send", true);
+            else{
+                echo "Aucun contact disponible dans la base de données";
+            }
             ?>
         </div>
     </form>
