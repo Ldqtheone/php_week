@@ -7,7 +7,7 @@
             $contacts = $database->selectAll('contacts');
             $nameDest = array();
             foreach ($contacts as $key => $contact) {
-                array_push($nameDest, $contact['firstname'] . ' ' . $contact['lastname']);
+                $nameDest[$contact['id']] =  $contact['firstname'] . ' ' . $contact['lastname'];
             }
             $tools->createSelect("dest", $nameDest, "Choisissez le nom de votre destinataire ");
             echo "<br/>";
@@ -23,13 +23,21 @@
     </form>
 
     <?php
-    if (isset($_POST['dest']) && isset($_POST['exp']) && isset($_POST['submitLetter']) ) {
-        $dest=$_POST['dest'];
-        $exp=$_POST['exp'];
-        if($dest===$exp){
+    if (isset($_POST['submitLetter']) ) {
+        if($_POST['dest']===$_POST['exp']){
             echo"<script>alert('Le destinataire doit être different de l\'expéditeur')</script>";
         }else{
+            $destInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['dest']));
+            $expInfos = $database->selectSpecific(['firstname, lastname, address'], "contacts", array( 'id' =>  $_POST['exp']));
 
+            $envelope = new Envelope(
+                "" . $destInfos['lastname'] ." " . $destInfos['firstname'],
+                $destInfos['address'],
+                "" . $expInfos['lastname'] ." " . $expInfos['firstname'],
+                $expInfos['address'],
+                $_POST['prio'],
+                $_POST['confidential']
+            );
         }
     }
     ?>

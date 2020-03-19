@@ -45,7 +45,7 @@ class Tools
 
         foreach($options as $key => $value)
         {
-            echo '<option value=' . $value . '>' .  $value . '</option>';
+            echo '<option value=' . $key . '>' .  $value . '</option>';
         }
         echo '</select>';
     }
