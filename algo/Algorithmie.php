@@ -1,20 +1,21 @@
 <?php
 
-
+/**
+ * Class Algorithmie
+ */
 class Algorithmie
 {
     /**
      * Algorithmie constructor.
      */
     public function __construct()
-    {
-    }
+    { }
 
     /**
      * Function associate with story 3
-     * @param $number
+     * @param int $number
      */
-    public function getPrimaryNumber($number)
+    public function getPrimaryNumber($number) : void
     {
         echo "Jusqu'à " . $number . " les nombres premiers sont : ";
         for ($i = 3; $i < $number; $i++)
@@ -28,10 +29,10 @@ class Algorithmie
 
     /**
      * Function associate with story 3
-     * @param $number
+     * @param int $number
      * @return bool
      */
-    private function isPrime($number)
+    private function isPrime($number) : bool
     {
         // boucle de 2 au nombre à tester
         for ($i = 2; $i < $number; $i++)
@@ -47,23 +48,21 @@ class Algorithmie
 
     /**
      * Function associate with story 4
-     * @param $timestamp
+     * @param int $timestamp
      * @throws Exception
      */
-    public function dateToCheck($timestamp)
+    public function dateToCheck($timestamp) : void
     {
         echo 'L\'évènement à eu lieu le : ' . date('d/m/Y', (new DateTime())->getTimestamp() - $timestamp);
     }
 
-
     /**
      * Function associate with story 5
-     * @param $numberOne
-     * @param $numberTwo
-     * @param $numberThree
-     * @return string
+     * @param int $numberOne
+     * @param int $numberTwo
+     * @param int $numberThree
      */
-    public function getMin($numberOne, $numberTwo, $numberThree)
+    public function getMin($numberOne, $numberTwo, $numberThree) : void
     {
         if ($numberOne < $numberTwo && $numberOne < $numberThree)
         {
@@ -79,16 +78,15 @@ class Algorithmie
         }
         else
         {
-            echo "il y a une égalité";
+            echo "Il y a une égalité";
         }
     }
 
     /**
      * Function associate with story 6
-     * @param $number
-     * @return string
+     * @param int $number
      */
-    public function converterRomanNumber($number)
+    public function converterRomanNumber($number) : void
     {
 
         if ($number > 0 && $number < 5000)
@@ -116,24 +114,24 @@ class Algorithmie
 
     /**
      * Function associate with story 7
-     * @param $nbr
+     * @param int $number
      */
-    public function factorial($nbr)
+    public function factorial($number) : void
     {
         $fact = 1;
-        for ($i = 1; $i <= $nbr; $i++)
+        for ($i = 1; $i <= $number; $i++)
         {
             $fact *= $i;
         }
-        echo "La factorielle de " . $nbr . " est " . $fact;
+        echo "La factorielle de " . $number . " est " . $fact;
     }
 
     /**
      * Function associate with story 8
-     * @param $decimal
+     * @param int $decimal
      * @return string
      */
-    function convertDecimalToHexadecimal($decimal)
+    function convertDecimalToHexadecimal($decimal) : string
     {
         $decimal = abs($decimal);
         $add = $decimal % 16;
@@ -173,10 +171,10 @@ class Algorithmie
 
     /**
      * Function associate with story 9
-     * @param $decimal
+     * @param int $decimal
      * @return string
      */
-    function convertDecimalToBinary($decimal)
+    function convertDecimalToBinary($decimal) : string
     {
         $decimal = abs($decimal);
         $add = $decimal % 2;
@@ -194,10 +192,10 @@ class Algorithmie
 
     /**
      * Function associate with story 10
-     * @param $mail
-     * @param $date
+     * @param string $mail
+     * @param string $date
      */
-    public function checkValues($mail, $date)
+    public function checkValues($mail, $date) : void
     {
         if (strlen($mail) > 3)
         {
@@ -225,9 +223,9 @@ class Algorithmie
 
     /**
      * Function associate with story 11
-     * @param $names
+     * @param array $names
      */
-    public function mySort($names)
+    public function mySort($names) : void
     {
         $array = explode(",", mb_strtolower(str_replace(" ", "", $names)));
         usort($array,

@@ -1,23 +1,22 @@
 <?php
 
-
 /**
  * Class Triceratops
  */
 class Triceratops
 {
     /**
-     * @var $life
-     * @var $damage
+     * @var int $life
+     * @var int $damage
      */
     private $life;
     private $damage;
 
     /**
      * Triceratops constructor.
-     * @param $life
-     * @param $damage
-     * @param $isMale
+     * @param int $life
+     * @param int $damage
+     * @param bool $isMale
      */
     public function __construct($life, $damage, $isMale)
     {
@@ -28,10 +27,10 @@ class Triceratops
     }
 
     /**
-     * get life of triceratops
+     * Getter of triceratops' life
      * @return int
      */
-    public function getLife()
+    public function getLife() : int
     {
         echo "<p class='dinoLog'>Triceratops life: " . $this->life . "</p><br />";
         return $this->life;
@@ -39,9 +38,9 @@ class Triceratops
 
     /**
      * Do a mortal attack
-     * @param $target
+     * @param Tyrex $target
      */
-    public function attackMortel($target)
+    public function attackMortel($target) : void
     {
         echo "<p class='dinoLog'>Triceratops mortal attack: " . $target->getLife() . " damage</p><br />";
         $target->receiveDamage($target->getLife());
@@ -49,9 +48,9 @@ class Triceratops
 
     /**
      * Receive damage
-     * @param $damage the damage received
+     * @param int $damage damage received
      */
-    public function receiveDamage($damage)
+    public function receiveDamage($damage) : void
     {
         echo "<p class='dinoLog'>Triceratops receive: " . $damage . " damage</p><br />";
         $this->life -= $damage;
