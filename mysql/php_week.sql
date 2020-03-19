@@ -48,15 +48,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `birthdate`, `gender`, `mail`, `address`, `city`, `postal`) VALUES
-(1, 'Brian', 'lecarpentier', '1993-10-20', 'Woman', 'lecarp@hotmail.fr', '45 rue due saint andré', 'paris', 75000),
-(11, 'coco', 'vallois', '1995-05-12', 'Man', 'coco@gmail.com', '15 rue de la Story', 'bda', 75000),
-(12, 'roman', 'clavier', '1995-05-12', 'Woman', 'rom@gmail.com', '15 rue de la Story', 'paris', 75000),
-(13, 'antony', 'correia', '1995-05-12', 'Woman', 'anto@gmail.com', '15 rue de la Story', 'paris', 75000),
-(14, 'francois', 'cornet', '1990-05-12', 'Man', 'francois@gmail.com', '15 rue de je kiff les bracs', 'paris', 75000),
-(15, 'Brian', 'rgbrg', '2020-03-04', 'Man', 'gferv@erge.fr', 'ere', 'paris', 75000),
-(16, 'dvzev', 'ezvv', '2020-03-07', 'Man', 'gfersv@ergse.fr', 'ere', 'paris', 75000),
-(17, 'sdvsd', 'svsdbvsdb', '2020-03-05', 'Man', 'gfedsrsv@ergse.fr', 'ere', 'vdc', 23495),
-(18, 'On', 'estTeubé', '2020-03-03', 'Man', 'OnAOublier@ville.et', 'leCode postal', 'idiot', 23495);
+(1, 'Babacar', 'RoiBabar', '1991-07-22', 'Man', 'babacar@babacar.fr', '45 rue due saint andré', 'Paris', 75003);
 
 --
 -- Index pour les tables déchargées
