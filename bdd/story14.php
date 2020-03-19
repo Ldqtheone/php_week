@@ -15,8 +15,7 @@
     <?php
         if (isset($_POST["checkContact"]))
         {
-            $userId = $_POST['contactSelect'];
-            $toUpdate = $database->selectId("contacts", $userId);
+            $toUpdate = $database->selectSpecific(['*'], "contacts", array( 'id' =>  $_POST['contactSelect']));
     ?>
     <form action="" method="post">
         <?php

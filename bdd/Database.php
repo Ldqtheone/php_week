@@ -14,6 +14,14 @@ class Database
         $this->connexion();
     }
 
+    public function __destruct()
+    {
+        if($this->connec)
+        {
+            $this->disconnect();
+        }
+    }
+
     private function connexion(){
         try
         {
@@ -24,7 +32,7 @@ class Database
         }
         catch (PDOException $e)
         {
-            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage();
+            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' Ligne.' . $e->getLine() . ' : ' . $e->getMessage();
             die($msg);
         }
     }
@@ -57,8 +65,35 @@ class Database
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectId($tableName, $id){
-        $sql = "SELECT * FROM " . $tableName . " WHERE id = " . $id;
+    public function selectSpecific($columns, $tableName, $whereClause){
+        if( empty($tableName) || empty($columns) || empty($whereClause) )
+        {
+            return false;
+        }
+
+        $columnsName = "";
+
+        foreach($columns as $value )
+        {
+            $updates[] = "$value";
+        }
+
+        $columnsName .= implode(', ', $updates);
+
+        $check = array();
+
+        foreach( $whereClause as $field => $value )
+        {
+            if( !empty( $field ) && !empty( $value ) )
+            {
+                $check[] = "$field = '$value'";
+            }
+
+        }
+        $check = implode(' AND ', $check);
+
+        $sql = "SELECT ". $columnsName. " FROM ".$tableName." WHERE " . $check ." ";
+
         $result = $this->connec->prepare($sql);
         $result->execute();
 
@@ -78,8 +113,6 @@ class Database
         {
             foreach( $whereClause as $field => $value )
             {
-                $value = $value;
-
                 $clause[] = "$field = '$value'";
             }
             $sql .= ' WHERE '. implode(' AND ', $clause);
@@ -87,6 +120,15 @@ class Database
 
         $stmt = $this->connec->prepare($sql);
         $stmt->execute();
+    }
+
+    /**
+     * Disconnect from db server
+     * Called automatically from __destruct function
+     */
+    public function disconnect()
+    {
+        $this->connec = null;
     }
 }
 ?>
