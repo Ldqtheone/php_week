@@ -43,10 +43,14 @@ nav ul li a:hover{
 
 /* Footer css */
 
+footer{
+    bottom: 0%;
+    width: 100%;
+}
+
 footer div{
     margin: 0;
 }
-
 
 #footerBandeRed{
     height: 60px;
@@ -123,14 +127,12 @@ footer div{
     color: cadetblue;
 }
 
-
 /* BDD css */
 
 .contactLink{
     text-decoration: none;
     font-style: oblique;
     color: rgb(206, 6, 43);
-    text-shadow: 2px 2px 4px black;
     transition-duration: 0.5s;
 }
 
