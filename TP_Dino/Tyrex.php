@@ -1,14 +1,13 @@
 <?php
 
-
 /**
  * Class Tyrex
  */
 class Tyrex
 {
     /**
-     * @var $life
-     * @var $damage
+     * @var int $life
+     * @var int $damage
      */
     private $life;
     private $damage;
@@ -16,9 +15,9 @@ class Tyrex
 
     /**
      * Tyrex constructor.
-     * @param $life
-     * @param $damage
-     * @param $isMale
+     * @param int $life
+     * @param int $damage
+     * @param bool $isMale
      */
     public function __construct($life, $damage, $isMale)
     {
@@ -29,21 +28,20 @@ class Tyrex
     }
 
     /**
-     * get life of tyrex
+     * Getter of Tyrex's life
      * @return int
      */
-    public function getLife()
+    public function getLife() : int
     {
         echo "<p class='dinoLog'>Tyrex life: " . $this->life . "</p><br />";
         return $this->life;
     }
 
-
     /**
      * Do a normal attack
-     * @param $target
+     * @param Triceratops $target
      */
-    public function attackDouce($target)
+    public function attackDouce($target) : void
     {
         echo "<p class='dinoLog'>Tyrex normal attack: " . $this->damage . " damage</p><br />";
         $target->receiveDamage($this->damage);
@@ -51,9 +49,9 @@ class Tyrex
 
     /**
      * Do a special attack
-     * @param $target
+     * @param Triceratops $target
      */
-    public function attackSpecial($target)
+    public function attackSpecial($target) : void
     {
         echo "<p class='dinoLog'>Tyrex special attack: " . ($this->damage * 2) . " damage</p><br />";
         $target->receiveDamage($this->damage * 2);
@@ -61,9 +59,9 @@ class Tyrex
 
     /**
      * Receive damage
-     * @param $damage  the damage received
+     * @param int $damage The damage received
      */
-    public function receiveDamage($damage)
+    public function receiveDamage($damage) : void
     {
         echo "<p class='dinoLog'>Tyrex receive: " . $damage . " damage</p><br />";
         $this->life -= $damage;
