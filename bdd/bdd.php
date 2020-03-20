@@ -1,8 +1,10 @@
 <?php
     require 'Database.php';
     require '../Tools.php';
+    require '../algo/Algorithmie.php';
     $database = new Database("php_week");
     $tools = new Tools();
+    $regex = new Algorithmie();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

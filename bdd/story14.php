@@ -55,20 +55,24 @@
     </form>
     <?php
         }
-        if(isset($_POST['editContact'])){
+        if(isset($_POST['editContact'])) {
+            if ($regex->checkValues($_POST['updateEmail'], $_POST['updateBirthdate'])) {
+                $user_data = array(
+                    'firstname' => $_POST['updateFirstName'],
+                    'lastname' => $_POST['updateLastName'],
+                    'birthdate' => $_POST['updateBirthdate'],
+                    'mail' => $_POST['updateEmail'],
+                    'address' => $_POST['updateAddress'],
+                    'city' => $_POST['updateCity'],
+                    'postal' => $_POST['updatePostal']
+                );
+                $update_where = array('id' => $_POST['updateId']);
 
-            $user_data = array(
-                'firstname' => $_POST['updateFirstName'],
-                'lastname' => $_POST['updateLastName'],
-                'birthdate' => $_POST['updateBirthdate'],
-                'mail' => $_POST['updateEmail'],
-                'address' => $_POST['updateAddress'],
-                'city'=>$_POST['updateCity'],
-                'postal'=>$_POST['updatePostal']
-            );
-            $update_where = array( 'id' => $_POST['updateId']);
-
-            $database->update("contacts", $user_data, $update_where);
+                $database->update("contacts", $user_data, $update_where);
+            }
+            else{
+                echo"<script>alert('L\'addresse email doit être correcte et la date au format : JJ/MM/AAAA')</script>";
+            }
         }
     ?>
 </div>

@@ -368,3 +368,35 @@ label {
     width: 100%;
     height: 70%;
 }
+
+h2#titleContact {
+    color: rgb(206, 6, 43);
+    margin-bottom: 30px;
+}
+
+div.contactContent select{
+    margin-bottom: 15px;
+}
+
+input#prio {
+    margin-right: 40px;
+}
+
+div.contactContent h2{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(206, 6, 43);
+}
+
+input#submitLetter {
+    width: 100%;
+}
+
+textarea#letter {
+    width: 100%;
+}
+
+input#submitLetter {
+    border-radius: 10px;
+    padding: 10px;
+}
