@@ -24,8 +24,8 @@
             }
             ?>
         </div>
-        <h2>Votre lettre :</h2>
         <div class="contactContent">
+            <h2>Votre lettre :</h2>
             <?php
             $tools->createTextArea("letter", 15, 45, "Votre lettre ici", true);
             $tools->createInput("submit", "submitLetter", null, null, "Send", true);
