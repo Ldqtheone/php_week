@@ -163,6 +163,12 @@ class Algorithmie
         }
         if ($decimal <= 1)
         {
+            $split = str_split($decimal);
+            if($split[0]==0){
+                unset($split[0]);
+                $split=implode("",$split);
+                return $split;
+            }
             return (string)$decimal;
         }
         else
