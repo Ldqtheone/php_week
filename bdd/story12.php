@@ -37,18 +37,24 @@
 
     <?php
     if (isset($_POST['submitContact'])) {
-        $user_data = array(
-            'firstname' => $_POST['contactFirstName'],
-            'lastname' => $_POST['contactName'],
-            'birthdate' => $_POST['contactBirthday'],
-            'mail' => $_POST['contactEmail'],
-            'address' => $_POST['contactAddress'],
-            'gender' => $_POST['contactGender'],
-            'city'=>$_POST['contactCity'],
-            'postal'=>$_POST['contactPostal']
-        );
 
-        $database->insertInto('contacts', $user_data);
+        if($regex->checkValues($_POST['contactEmail'], $_POST['contactBirthday'])){
+            $user_data = array(
+                'firstname' => $_POST['contactFirstName'],
+                'lastname' => $_POST['contactName'],
+                'birthdate' => $_POST['contactBirthday'],
+                'mail' => $_POST['contactEmail'],
+                'address' => $_POST['contactAddress'],
+                'gender' => $_POST['contactGender'],
+                'city' => $_POST['contactCity'],
+                'postal' => $_POST['contactPostal']
+            );
+
+         $database->insertInto('contacts', $user_data);
+        }
+        else{
+            echo"<script>alert('L\'addresse email doit être correcte et la date au format : JJ/MM/AAAA')</script>";
+        }
     }
     ?>
 </div>

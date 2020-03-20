@@ -200,30 +200,34 @@ class Algorithmie
      * Function associate with story 10
      * @param string $mail
      * @param string $date
+     * @return bool
      */
-    public function checkValues($mail, $date) : void
+    public function checkValues($mail, $date)
     {
         if (strlen($mail) > 3)
         {
             if (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $mail))
             {
                 echo 'L\'adresse n\'est pas valide';
+                return false;
             }
             else
             {
                 if (preg_match(" /^[0-9]{1,4}\-[0-9]{1,2}\-[0-9]{2}$/ ", $date))
                 {
-                    echo "La date et l'email sont valides";
+                    return true;
                 }
                 else
                 {
                     echo "La date doit être au format DD/MM/YYYY";
+                    return false;
                 }
             }
         }
         else
         {
             echo 'L\'adresse email doit contenir plus de 3 caractères';
+            return false;
         }
     }
 
