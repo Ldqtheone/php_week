@@ -202,7 +202,7 @@ class Algorithmie
      * @param string $date
      * @return bool
      */
-    public function checkValues($mail, $date)
+    public function checkValues($mail, $date) : bool
     {
         if (strlen($mail) > 3)
         {
@@ -215,6 +215,7 @@ class Algorithmie
             {
                 if (preg_match(" /^[0-9]{1,4}\-[0-9]{1,2}\-[0-9]{2}$/ ", $date))
                 {
+                    echo "L'adresse email et la date sont valides";
                     return true;
                 }
                 else

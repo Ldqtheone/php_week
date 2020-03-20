@@ -18,7 +18,7 @@ class Database
 
     /**
      * Database constructor.
-     * @param $dbname
+     * @param string $dbname
      * @param string $login
      * @param string $pass
      */
