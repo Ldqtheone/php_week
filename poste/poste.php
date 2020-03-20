@@ -1,10 +1,10 @@
 <?php
-require '../bdd/Database.php';
-require '../Tools.php';
-require 'Postal.php';
-$database = new Database("php_week");
-$tools = new Tools();
-$envelope = new Postal();
+    require '../bdd/Database.php';
+    require '../Tools.php';
+    require 'Postal.php';
+    $database = new Database("php_week");
+    $tools = new Tools();
+    $envelope = new Postal();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
